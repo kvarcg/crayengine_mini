@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/kvarcg/crayengine_mini.svg?branch=master)](https://travis-ci.com/kvarcg/crayengine_mini)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 # CRay Engine Mini
@@ -46,10 +47,16 @@ The project requires C++14 and has been tested with the following platforms/comp
         <tr>
             <th>OS</th>
             <th>Compiler</th>
+            <th>Status</th>
         </tr>
         <tr>
             <td>Windows</td>
             <td>MSVC 2017 and higher</td>
+            <td rowspan=5>
+                <a href="https://travis-ci.com/kvarcg/crayengine_mini">
+                    <img src="https://travis-ci.com/kvarcg/crayengine_mini.svg?branch=master" alt="Build Status">
+                    </a>
+            </td>
         </tr>
         <tr>
             <td>Linux</td>
@@ -65,6 +72,8 @@ The project requires C++14 and has been tested with the following platforms/comp
         </tr>
     </tbody>
 </table>
+
+For more details, see the latest tests on [Travis CI](https://travis-ci.com/kvarcg/crayengine_mini). I am not able to get MinGW and 32-bit GCC/Clang to work at the moment on Travis, but compiles fine on my local machines, thus I claim it works :).
 
 The C++ version can be easily downgraded to C++11, by simply including the [Compatibility.h](Projects/Global/Compatibility.h) that contains the reference implementation for *make_unique*.
 
