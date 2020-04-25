@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="32" log_level="info" output_name="materials_test1"/>
+    <integrator type="ambient_occlusion" spp="10" ao_samples="20" ao_range="0"/>
+    <integrator type="path_tracing" spp="10" pt_depth="10" pt_russian_roulette="true"/>
+    <film dimensions="512 512" rgb_gamma="2.2" rgb_exposure="4.0"/>
+
+    <camera type="perspective" aperture="35.0" near="1.0" far="100" position="0.0, 5.6, 10" target="0.0, 1.0, -1.5" up="0.0, 1.0, 0.0"/>
+
+    <dielectric name="null" diffuse_reflection="0.0 0.0 0.0"/>
+    <omnilight flux="300, 300, 300" position="-10 10 -5"/>
+ <!--    <sphere name="light" center="-10.0, 10.0, -20.0" radius="0.5" material="null"/>
+    <arealight flux="1000, 1000, 1000" primitive="light" double_sided="false"/>
+    <sphere name="light2" center="10.0, 10.0, -20.0" radius="0.5" material="null"/>
+    <arealight flux="1000, 1000, 1000" primitive="light2" double_sided="false"/>
+    <sphere name="light3" center="-10.0, 10.0, 0.0" radius="0.5" material="null"/>
+    <arealight flux="1000, 1000, 1000" primitive="light3" double_sided="false"/>
+    <sphere name="light4" center="10.0, 10.0, 0.0" radius="0.5" material="null"/>
+    <arealight flux="1000, 1000, 1000" primitive="light4" double_sided="false"/> -->
+
+    <!-- lambert reflection materials -->
+    <transform translation="-1.5, 0.5, -22.0">
+    <dielectric name="diffuse_reflection_black"  diffuse_reflection="0.0 0.0 0.0"/>
+    <dielectric name="diffuse_reflection_orange" diffuse_reflection="0.8 0.3 0.3"/>
+    <dielectric name="diffuse_reflection_white"  diffuse_reflection="1.0 1.0 1.0"/>
+    <sphere center="0.0, 0.0, 0.0" radius="0.5" material="diffuse_reflection_black"/>
+    <sphere center="1.5, 0.0, 0.0" radius="0.5" material="diffuse_reflection_orange"/>
+    <sphere center="3.0, 0.0, 0.0" radius="0.5" material="diffuse_reflection_white"/>
+    </transform>
+
+    <!-- lambert transmission materials -->
+    <transform translation="-6.0, 0.5, -20.0">
+    <dielectric name="diffuse_transmission_black"  diffuse_transmission="0.0 0.0 0.0"/>
+    <dielectric name="diffuse_transmission_orange" diffuse_transmission="0.8 0.3 0.3"/>
+    <dielectric name="diffuse_transmission_white"  diffuse_transmission="1.0 1.0 1.0"/>
+    <sphere center="4.5, 0.0, 0.0" radius="0.5" material="diffuse_transmission_black"/>
+    <sphere center="6.0, 0.0, 0.0" radius="0.5" material="diffuse_transmission_orange"/>
+    <sphere center="7.5, 0.0, 0.0" radius="0.5" material="diffuse_transmission_white"/>
+    </transform>
+
+    <!-- lambert reflection/transmission materials -->
+    <transform translation="-10.5, 0.5, -18.0">
+    <dielectric name="diffuse_reflection_transmission_black"  diffuse_reflection="0.0 0.0 0.0" diffuse_transmission="0.0 0.0 0.0" eta_t="1.05"/>
+    <dielectric name="diffuse_reflection_transmission_orange" diffuse_reflection="0.2 0.2 0.2" diffuse_transmission="0.8 0.3 0.3" eta_t="1.05"/>
+    <dielectric name="diffuse_reflection_transmission_white"  diffuse_reflection="0.2 0.2 0.2" diffuse_transmission="1.0 1.0 1.0" eta_t="1.3"/>
+    <sphere center=" 9.0, 0.0, 0.0" radius="0.5" material="diffuse_reflection_transmission_black"/>
+    <sphere center="10.5, 0.0, 0.0" radius="0.5" material="diffuse_reflection_transmission_orange"/>
+    <sphere center="12.0, 0.0, 0.0" radius="0.5" material="diffuse_reflection_transmission_white"/>
+    </transform>
+
+    <!-- general dielectric materials -->
+    <transform translation="-1.5, 0.5, -16.0">
+    <dielectric name="plastic_black"  diffuse_reflection="0.8 0.3 0.3" specular_reflection="0.0 0.0 0.0" roughness="0.01" predefined="Polystyrene"/>
+    <dielectric name="plastic_orange" diffuse_reflection="0.8 0.3 0.3" specular_reflection="0.8 0.3 0.3" roughness="0.01" predefined="Polystyrene"/>
+    <dielectric name="plastic_white"  diffuse_reflection="0.8 0.3 0.3" specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="Polystyrene"/>
+    <sphere center="0.0, 0.0, 0.0" radius="0.5" material="plastic_black"/>
+    <sphere center="1.5, 0.0, 0.0" radius="0.5" material="plastic_orange"/>
+    <sphere center="3.0, 0.0, 0.0" radius="0.5" material="plastic_white"/>
+    </transform>
+
+    <!-- mirrors -->
+    <transform translation="-1.5, 0.5, -14.0">
+    <dielectric name="mirror_smooth"  specular_reflection="1.0 1.0 1.0" roughness="0.0"/>
+    <dielectric name="mirror_rough"   specular_reflection="1.0 1.0 1.0" roughness="0.01"/>
+    <dielectric name="mirror_rougher" specular_reflection="1.0 1.0 1.0" roughness="0.05"/>
+    <sphere center="0.0, 0.0, 0.0" radius="0.5" material="mirror_smooth"/>
+    <sphere center="1.5, 0.0, 0.0" radius="0.5" material="mirror_rough"/>
+    <sphere center="3.0, 0.0, 0.0" radius="0.5" material="mirror_rougher"/>
+    </transform>
+
+    <!-- pure transmission -->
+    <transform translation="-6.0, 0.5, -12.0">
+    <dielectric name="transmission_smooth"  specular_transmission="1.0 1.0 1.0" roughness="0.0"   predefined="Crown_Glass_bk7"/>
+    <dielectric name="transmission_rough"   specular_transmission="1.0 1.0 1.0" roughness="0.01"  predefined="Crown_Glass_bk7"/>
+    <dielectric name="transmission_rougher" specular_transmission="1.0 1.0 1.0" roughness="0.4"   predefined="Crown_Glass_bk7"/>
+    <sphere center="4.5, 0.0, 0.0" radius="0.5" material="transmission_smooth"/>
+    <sphere center="6.0, 0.0, 0.0" radius="0.5" material="transmission_rough"/>
+    <sphere center="7.5, 0.0, 0.0" radius="0.5" material="transmission_rougher"/>
+    </transform>
+
+    <!-- glass -->
+    <transform translation="-10.5, 0.5, -10.0">
+    <dielectric name="glass_smooth"  specular_reflection="1.0 1.0 1.0" specular_transmission="1.0 1.0 1.0" roughness="0.0"   predefined="Crown_Glass_bk7"/>
+    <dielectric name="glass_rough"   specular_reflection="1.0 1.0 1.0" specular_transmission="1.0 1.0 1.0" roughness="0.01"  predefined="Crown_Glass_bk7"/>
+    <dielectric name="glass_rougher" specular_reflection="1.0 1.0 1.0" specular_transmission="1.0 1.0 1.0" roughness="0.4"   predefined="Crown_Glass_bk7"/>
+    <sphere center=" 9.0, 0.0, 0.0" radius="0.5" material="glass_smooth"/>
+    <sphere center="10.5, 0.0, 0.0" radius="0.5" material="glass_rough"/>
+    <sphere center="12.0, 0.0, 0.0" radius="0.5" material="glass_rougher"/>
+    </transform>
+
+    <!-- metals -->
+    <transform translation="-1.5, 0.5, -8.0">
+    <metal name="metal_black" specular_reflection="0.0 0.0 0.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="1.0 1.0 1.0"/>
+    <metal name="metal_gray"  specular_reflection="0.5 0.5 0.5" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="1.0 1.0 1.0"/>
+    <metal name="metal_white" specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="1.0 1.0 1.0"/>
+    <sphere center="0.0, 0.0, 0.0" radius="0.5" material="metal_black"/>
+    <sphere center="1.5, 0.0, 0.0" radius="0.5" material="metal_gray"/>
+    <sphere center="3.0, 0.0, 0.0" radius="0.5" material="metal_white"/>
+    </transform>
+
+    <!-- metals eta -->
+    <transform translation="-6.0, 0.5, -6.0">
+    <metal name="metal_eta_black" specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="0.1 0.1 0.1"/>
+    <metal name="metal_eta_gray"  specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="0.5 0.5 0.5"/>
+    <metal name="metal_eta_white" specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="1.0 1.0 1.0"/>
+    <sphere center="4.5, 0.0, 0.0" radius="0.5" material="metal_eta_black"/>
+    <sphere center="6.0, 0.0, 0.0" radius="0.5" material="metal_eta_gray"/>
+    <sphere center="7.5, 0.0, 0.0" radius="0.5" material="metal_eta_white"/>
+    </transform>
+
+    <!-- metals absorption -->
+    <transform translation="-10.5, 0.5, -4.0">
+    <metal name="metal_absorption_black" specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="0.1 0.1 0.1" eta_t="1.0 1.0 1.0"/>
+    <metal name="metal_absorption_gray"  specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="0.5 0.5 0.5" eta_t="1.0 1.0 1.0"/>
+    <metal name="metal_absorption_white" specular_reflection="1.0 1.0 1.0" roughness="0.001" absorption_k="1.0 1.0 1.0" eta_t="1.0 1.0 1.0"/>
+    <sphere center=" 9.0, 0.0, 0.0, 0.0, 0.0" radius="0.5" material="metal_absorption_black"/>
+    <sphere center="10.5, 0.0, 0.0, 0.0, 0.0" radius="0.5" material="metal_absorption_gray"/>
+    <sphere center="12.0, 0.0, 0.0, 0.0, 0.0" radius="0.5" material="metal_absorption_white"/>
+    </transform>
+
+    <!-- metals predefined -->
+    <transform translation="-3.75, 0.5, -2.0">
+    <metal name="metal_alluminium"  specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="alluminium"/>
+    <metal name="metal_brass"       specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="brass"/>
+    <metal name="metal_copper"      specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="copper"/>
+    <metal name="metal_gold"        specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="gold"/>
+    <metal name="metal_iron"        specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="iron"/>
+    <metal name="metal_silver"      specular_reflection="1.0 1.0 1.0" roughness="0.01" predefined="silver"/>
+    <sphere center=" 0.0, 0.0, 0.0" radius="0.5" material="metal_alluminium"/>
+    <sphere center=" 1.5, 0.0, 0.0" radius="0.5" material="metal_brass"/>
+    <sphere center=" 3.0, 0.0, 0.0" radius="0.5" material="metal_copper"/>
+    <sphere center=" 4.5, 0.0, 0.0" radius="0.5" material="metal_gold"/>
+    <sphere center=" 6.0, 0.0, 0.0" radius="0.5" material="metal_iron"/>
+    <sphere center=" 7.5, 0.0, 0.0" radius="0.5" material="metal_silver"/>
+    </transform>
+
+    <!-- ground -->
+    <texture name="checkertex" type="checker" rgb1="0.2, 0.3, 0.1" rgb2="1 1 1" frequency="400"/>
+    <dielectric name="ground"       diffuse_reflection="0.8, 0.8, 0.8" diffuse_reflection_texture="checkertex"/>
+    <transform translation="0.0, 0.0, 0" scale="100, 1.0, 100.0">
+        <rectangle type="xz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="true" material="ground"/>
+    </transform>
+</world>

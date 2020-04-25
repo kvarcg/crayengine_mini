@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="32" log_level="info" output_name="playroom"/>
+    <integrator type="path_tracing" spp="1" pt_depth="1" pt_russian_roulette="true"/>
+    <!--
+    <integrator type="ambient_occlusion" spp="10" ao_samples="20" ao_range="2.5"/>
+    -->
+    <film dimensions="512 512" rgb_gamma="2.2" rgb_exposure="6.0"/>
+
+    <camera type="perspective" aperture="45.0" near="0.1" far="10" position="-0.15, 0.3, 1.2" target="-0.15, 0.3, -2" up="0.0, 1.0, 0.0"/>
+    <camera type="thinlens" aperture="45.0" far="10" position="-0.15, 0.3, 1.2" target="-0.15, 0.3, -2" up="0.0, 1.0, 0.0" lens_radius="0.016" focal_distance="1.2"/>
+
+<!--     <camera type="orthographic" aperture="60.0" near="0.0" far="10" window="-1.8,1.8,-1.8,1.8"
+    position="1.30, 1.83, 2.62" target="0.24, 0.65, 0.6" up="-0.23, 0.88, -0.41"/> -->
+
+    <dielectric name="null" diffuse_reflection="0.0 0.0 0.0"/>
+    <sphere name="light" center="0.99, 0.84, 1.95" radius="0.05" material="null"/>
+    <arealight flux="10 9 8" primitive="light" double_sided="true"/>
+
+	<directory path="playroom"/>
+	<transform rotation="0,0,1,0" scale="0.01, 0.01, 0.01" translation="0,0,0">
+		<polygon_group file="ball.obj"/>
+		<polygon_group file="bunny.obj"/>
+		<polygon_group file="chair.obj"/>
+		<polygon_group file="env.obj"/>
+		<polygon_group file="floor.obj"/>
+		<polygon_group file="lamp.obj"/>
+		<polygon_group file="lamp_cover_unlit.obj" double_sided="true"/>
+		<polygon_group file="mobilo_unlit.obj" double_sided="true"/>
+		<polygon_group file="lunchbox.obj"/>
+		<polygon_group file="plate.obj"/>
+		<polygon_group file="poster.obj"/>
+	</transform>
+</world>

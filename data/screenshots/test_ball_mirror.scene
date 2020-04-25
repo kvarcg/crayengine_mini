@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="32" log_level="info" output_name="test_ball_mirror"/>
+    <integrator type="path_tracing" spp="2000" pt_depth="100" pt_russian_roulette="true"/>
+    <film dimensions="1920 1080" rgb_gamma="2.2" rgb_exposure="8.0"/>
+
+	<camera type="thinlens" aperture="22.0" near="0.01" far="100" position="3.04068, 3.17153, 3.20454" target="0.118789, 0.473398, 0.161081" up="0.0, 1.0, 0.0" lens_radius="0.008" focal_distance="3.2"/>
+
+    <dielectric name="null" diffuse_reflection="0.0 0.0 0.0"/>
+    <dielectric name="smooth" specular_reflection="1.0 1.0 1.0" roughness="0.0"/>
+
+    <transform rotation="45 0 1 0">
+        <sphere name="light" center="-10.0, 10.0, -10.0" radius="1" material="null"/>
+        <arealight flux="1000, 1000, 1000" primitive="light" double_sided="false"/>
+        <sphere name="light2" center="10.0, 10.0, -10.0" radius="1" material="null"/>
+        <arealight flux="1000, 1000, 1000" primitive="light2" double_sided="false"/>
+        <sphere name="light3" center="-10.0, 10.0, 10.0" radius="1" material="null"/>
+        <arealight flux="1000, 1000, 1000" primitive="light3" double_sided="false"/>
+        <sphere name="light4" center="10.0, 10.0, 10.0" radius="1" material="null"/>
+        <arealight flux="1000, 1000, 1000" primitive="light4" double_sided="false"/>
+    </transform>
+
+	<directory path="../ball"/>
+
+    <dielectric name="bottom" diffuse_reflection="0.2 0.2 0.2"/>
+    <dielectric name="mirror_rough" specular_reflection="1.0 1.0 1.0" roughness="0.01"/>
+    <transform translation="0.110507, 0.494301, 0.126194" scale="0.482906, 0.482906, 0.482906">
+        <polygon_group file="Mesh000.obj" material="bottom"/>
+    </transform>
+    <transform translation="0.0571719, 0.213656, 0.0682078" scale="0.482906, 0.482906, 0.482906">
+        <polygon_group file="Mesh001.obj" material="mirror_rough"/>
+    </transform>
+    <transform translation="0.156382, 0.777229, 0.161698" scale="0.482906, 0.482906, 0.482906">
+        <polygon_group file="Mesh002.obj" material="mirror_rough"/>
+    </transform>
+
+    <texture name="checkertex" type="checker" rgb1="0.325 0.31 0.25" rgb2="0.725 0.71 0.68" frequency="100"/>
+    <dielectric name="ground" diffuse_reflection="1.0 1.0 1.0" diffuse_reflection_texture="checkertex"/>
+    <transform translation="-0.708772, 0, -0.732108" scale="15 15 15" rotation="44 0 1 0">
+        <rectangle type="xz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="true" material="ground"/>
+    </transform>
+</world>

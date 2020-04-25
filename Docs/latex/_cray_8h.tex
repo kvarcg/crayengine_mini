@@ -1,0 +1,341 @@
+\hypertarget{_cray_8h}{}\doxysection{Projects/\+C\+Ray/\+Cray.h File Reference}
+\label{_cray_8h}\index{Projects/CRay/Cray.h@{Projects/CRay/Cray.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}
+\begin{DoxyCompactList}\small\item\em Struct for a 3-\/dimensional vector. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}
+\begin{DoxyCompactList}\small\item\em Struct for a 4x4 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__base_ga61df8c6544a4c2dabae7825eeb67b0bd}{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}
+\begin{DoxyCompactList}\small\item\em Define to set double precision floats as default. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gab602d18b7292bc5b5eaf3840cbbad311}{V\+E\+C3}}(\+\_\+x,  \+\_\+y,  \+\_\+z)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+y,\+\_\+z\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from 3 values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga7d185ec101e0d3ddebe0298924481ebc}{V\+E\+C3\+\_\+\+X\+YZ}}(\+\_\+x)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+x,\+\_\+x\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from 1 value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gae2a8a655c5742704ca55a5420e79cdec}{V\+E\+C3\+\_\+\+A\+R\+R\+AY}}(\+\_\+x)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x\mbox{[}0\mbox{]},\+\_\+x\mbox{[}1\mbox{]},\+\_\+x\mbox{[}2\mbox{]}\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from array. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gab9b48a35ed71a8812f099b1c0bba6cea}{M\+A\+T4}}(\+\_\+x0,  \+\_\+y0,  \+\_\+z0,  \+\_\+w0,  \+\_\+x1,  \+\_\+y1,  \+\_\+z1,  \+\_\+w1,  \+\_\+x2,  \+\_\+y2,  \+\_\+z2,  \+\_\+w2,  \+\_\+x3,  \+\_\+y3,  \+\_\+z3,  \+\_\+w3)~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{\+\_\+x0, \+\_\+y0, \+\_\+z0, \+\_\+w0, \+\_\+x1, \+\_\+y1, \+\_\+z1, \+\_\+w1, \+\_\+x2, \+\_\+y2, \+\_\+z2, \+\_\+w2, \+\_\+x3, \+\_\+y3, \+\_\+z3, \+\_\+w3\}
+\begin{DoxyCompactList}\small\item\em Mat4 constructor from 16 values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga7bd97c392a1365d7e402082970d95788}{M\+A\+T4\+\_\+\+I\+D\+E\+N\+T\+I\+TY}}~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1\}
+\begin{DoxyCompactList}\small\item\em Mat4 constructor for identity matrix. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}~uint64\+\_\+t
+\begin{DoxyCompactList}\small\item\em Opaque handle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga0073e75002aab52d5a07cb43e67538e4}{C\+R\+A\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+N\+D\+LE}}~0u
+\begin{DoxyCompactList}\small\item\em Opaque invalid handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}
+\begin{DoxyCompactList}\small\item\em floating point value \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__base_ga187c30c514c38f2f2c6ed25567ead85f}{cr\+\_\+vec3}}
+\begin{DoxyCompactList}\small\item\em Struct for a 3-\/dimensional vector. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__base_ga711c803e4df67cfb57e003aad4fb85ea}{cr\+\_\+mat4}}
+\begin{DoxyCompactList}\small\item\em Struct for a 4x4 matrix. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} \mbox{\hyperlink{group__enums_ga460e39abc6bc04e4c781dd0c49df71d5}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}}
+\begin{DoxyCompactList}\small\item\em List of supported acceleration structures. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} \mbox{\hyperlink{group__enums_ga3bc05b942cfd71da6522f92e6063909b}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}}
+\begin{DoxyCompactList}\small\item\em List of supported integrators. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} \mbox{\hyperlink{group__enums_ga54dd924a98880121ac5649a3cfc12013}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}}
+\begin{DoxyCompactList}\small\item\em List of supported log messages. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_gaa33418de77c94dbbf18e1a7c3778db37}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}} \mbox{\hyperlink{group__enums_ga41e2024d6dceea465009aa7bd68ff3eb}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}}
+\begin{DoxyCompactList}\small\item\em List of I\+OR for supported dielectrics, sampled at wavelength 526nm. Source\+: \href{https://refractiveindex.info}{\texttt{ https\+://refractiveindex.\+info}}. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} \mbox{\hyperlink{group__enums_gaa57d5a4403a3f4165929ef0c152b3b05}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}}
+\begin{DoxyCompactList}\small\item\em List of supported conductors (I\+OR and absorption), sampled at wavelengths 645nm, 526nm, 444nm. Source\+: \href{https://refractiveindex.info}{\texttt{ https\+://refractiveindex.\+info}}. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_gaadde5874628fa2ecf8234e675c4a7bca}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}} \mbox{\hyperlink{group__enums_gaa91044ece8a5894948f1061ded5b4f77}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em List of supported texture wrapping modes. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_ga9dd41d663d79d6b65ca6464e1ed7dcf2}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}} \mbox{\hyperlink{group__enums_gaae54d06a1fa62210d5acf8967a296936}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em List of supported texture mapping modes. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{group__enums_ga91363bf13e8b0afb2280b03404766288}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}} \mbox{\hyperlink{group__enums_gad037b9b0a38f993f05e5345e57c63e03}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}}
+\begin{DoxyCompactList}\small\item\em List of supported texture filtering modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} \{ \mbox{\hyperlink{group__enums_ggad99ba17ad9310c76e529921a042c91d0a0cbfdb1a7209162f7dc806a5f032bf97}{C\+R\+\_\+\+A\+S\+\_\+\+A\+R\+R\+AY}}, 
+\mbox{\hyperlink{group__enums_ggad99ba17ad9310c76e529921a042c91d0a3167007d396f09503b213211572f3cde}{C\+R\+\_\+\+A\+S\+\_\+\+B\+VH}}, 
+\mbox{\hyperlink{group__enums_ggad99ba17ad9310c76e529921a042c91d0a0283fd4f7d460fda4c17236562ff5f31}{C\+R\+\_\+\+A\+S\+\_\+\+N\+O\+NE}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported acceleration structures. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} \{ \mbox{\hyperlink{group__enums_ggac2bf4c86c36fdc97917721a24fc3adfea7d06b6662cda87f3f7a881009a6eb8cd}{C\+R\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+O\+R\+\_\+\+PT}}, 
+\mbox{\hyperlink{group__enums_ggac2bf4c86c36fdc97917721a24fc3adfeaf879c0168b5c2595b6e89de3d5f517b7}{C\+R\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+O\+R\+\_\+\+AO}}, 
+\mbox{\hyperlink{group__enums_ggac2bf4c86c36fdc97917721a24fc3adfea2f1936b878766f44c4233a46308de52d}{C\+R\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+O\+R\+\_\+\+N\+O\+NE}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported integrators. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} \{ \newline
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793a7acf28aefea59e2f08b3a4fb53f85ea0}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+E\+R\+R\+OR}}, 
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793adb9cfeb2f3da7ffde9cb01a83d0606d0}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+W\+A\+R\+N\+I\+NG}}, 
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793af071822cbfdd6ba43248f3e8e412d0b1}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+I\+N\+FO}}, 
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793a44dec743c6b10f7fa790332a16107ac4}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+A\+S\+S\+E\+RT}}, 
+\newline
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793a123d2442729a7121746916d39d515567}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+D\+E\+B\+UG}}, 
+\mbox{\hyperlink{group__enums_gga496bc91ad0750fff7d085d36890f5793a248835ab7afd4fd92e5befa32447cbb3}{C\+R\+\_\+\+L\+O\+G\+G\+E\+R\+\_\+\+N\+O\+T\+H\+I\+NG}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported log messages. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_gaa33418de77c94dbbf18e1a7c3778db37}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}} \{ \newline
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a1661b068eff8be651d80e49e42abf78e}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Acrylic\+\_\+glass}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a2fa499d65b5c4ccc0e8acb55ac4a2f3c}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Polystyrene}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a7f117f58898450b651bc1bb2c9197ac9}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Polycarbonate}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37acc91499ed6524e60b1da5496ee64fc23}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Diamond}}, 
+\newline
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a90db277788708884a27b10a034f9184d}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Ice}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a436b52ff723eb0b6ee37a5a13b7ae325}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Sapphire}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a7dbbd61d387b20f45179b73e59edc79d}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Crown\+\_\+\+Glass\+\_\+bk7}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37ab87b7fd346980e7c1e0c679f10f6fe62}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Soda\+\_\+lime\+\_\+glass}}, 
+\newline
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37af5e1d629828ca408d8ed358131cec4a5}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Water\+\_\+25C}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37ae701e882af4f4d1cb30b791333f4cda8}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Acetone\+\_\+20C}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37ae7f15479e80261551ac860b3e06376b7}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Air}}, 
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a49df5007dfcd051a0a0d075abdc1b3a7}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+Carbon\+\_\+dioxide}}, 
+\newline
+\mbox{\hyperlink{group__enums_ggaa33418de77c94dbbf18e1a7c3778db37a0fc86d950636fc718449ed188e8c6e8a}{C\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+C\+\_\+\+A\+L\+L\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of I\+OR for supported dielectrics, sampled at wavelength 526nm. Source\+: \href{https://refractiveindex.info}{\texttt{ https\+://refractiveindex.\+info}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} \{ \newline
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43abd0c9913b6a3524acc9467bd68803059}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Alluminium\+\_\+\+Al}}, 
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43a6be45b7682436384b5721aa6cd9a6f1e}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Brass\+\_\+\+Cu\+Zn}}, 
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43adfcdce872687517f9485c6f62d493de4}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Copper\+\_\+\+Cu}}, 
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43a2ce6302b1dc5d16c69a8d70dfb61e35e}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Gold\+\_\+\+Au}}, 
+\newline
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43a51c80291596d0669035188ea2473bd68}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Iron\+\_\+\+Fe}}, 
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43abb12669dee4cbdd5732872dcdd08dd1e}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+Silver\+\_\+\+Ag}}, 
+\mbox{\hyperlink{group__enums_ggaacc25cc4e4f10df1c750216ead384e43a202eb42d080a33951fa205dac74c29ad}{C\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+R\+\_\+\+A\+L\+L\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported conductors (I\+OR and absorption), sampled at wavelengths 645nm, 526nm, 444nm. Source\+: \href{https://refractiveindex.info}{\texttt{ https\+://refractiveindex.\+info}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_gaadde5874628fa2ecf8234e675c4a7bca}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}} \{ \mbox{\hyperlink{group__enums_ggaadde5874628fa2ecf8234e675c4a7bcaa30b32c7184e416995a4213715c0f52f5}{C\+T\+W\+\_\+\+C\+L\+A\+MP}}, 
+\mbox{\hyperlink{group__enums_ggaadde5874628fa2ecf8234e675c4a7bcaa2fe5d620d55800a7b499e3cd98c0a575}{C\+T\+W\+\_\+\+R\+E\+P\+E\+AT}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported texture wrapping modes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_ga9dd41d663d79d6b65ca6464e1ed7dcf2}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}} \{ \mbox{\hyperlink{group__enums_gga9dd41d663d79d6b65ca6464e1ed7dcf2a7fbe3411da95984be8677dbfaa7f0ff7}{C\+T\+M\+\_\+\+UV}}, 
+\mbox{\hyperlink{group__enums_gga9dd41d663d79d6b65ca6464e1ed7dcf2a5cd53afda17dcfb04cc8dad2330d5180}{C\+T\+M\+\_\+\+P\+L\+A\+N\+AR}}, 
+\mbox{\hyperlink{group__enums_gga9dd41d663d79d6b65ca6464e1ed7dcf2aa3e3352dd047532cd1e3e4f6e3c9bcef}{C\+T\+M\+\_\+\+S\+P\+H\+E\+R\+I\+C\+AL}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported texture mapping modes. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__enums_ga91363bf13e8b0afb2280b03404766288}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}} \{ \mbox{\hyperlink{group__enums_gga91363bf13e8b0afb2280b03404766288a56143e4614b748d63f435e96a8767108}{C\+T\+F\+\_\+\+B\+OX}}, 
+\mbox{\hyperlink{group__enums_gga91363bf13e8b0afb2280b03404766288aac2d5139781d9442ff2a2d25e89a5fc1}{C\+T\+F\+\_\+\+T\+R\+I\+A\+N\+G\+LE}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of supported texture filtering modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__resource_gaaeffaef6f8257ee193922d4b1aef02f5}{C\+R\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the rendering engine. This must be the first function call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga0f8adb5588e3a2fe9b2cbdb0b9fbd1d8}{C\+R\+\_\+destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys any internal allocations. This is only necessary if multiple rendering operations are to be performed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}{C\+R\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the rendering operation\+: performs scene preprocessing, initializes threads and starts rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga96d06ba918def088db9bbba50e315e42}{C\+R\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Issues a request to stop any running rendering operations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga11c06977090d2de8bec36d6e62e1ef64}{C\+R\+\_\+clear\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Clears any internal scene data, e.\+g. cameras, acceleration structures, lights, materials, etc. This is needed only if a subsequent rendering operation is to be performed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__resource_ga23dc42e6ddb480671e8017131c3b2588}{C\+R\+\_\+started}} ()
+\begin{DoxyCompactList}\small\item\em Queries the renderer if a start command has been issued. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__resource_ga8970ba439c0e1eabda6fc79a3cb9f315}{C\+R\+\_\+finished}} ()
+\begin{DoxyCompactList}\small\item\em Queries the renderer if rendering has finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga23796051d4a0926eb7c869f02ae2bfee}{C\+R\+\_\+enable\+R\+G\+B\+Buffer}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables the use of an R\+GB buffer. By default, all results are written to a floating buffer, for increased precision. When an R\+GB buffer is enabled, the main writing is still performed on the floating buffer. The R\+GB buffer simply contains the converted 8-\/bit values after tonemapping and gamma correction. This is useful mainly for G\+UI operations, in order to avoid performing a whole conversion later on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga1da2648f72e031b1847466182d40a7e8}{C\+R\+\_\+set\+Output\+Name}} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Sets an output name for writing. This is just a utility function, e.\+g. for scene loaders, as the engine does not perform any file operations. The name does not contain any extension. It is the responsibility of the caller to retrieve the final framebuffer and write to whichever file format is desired (or do anything with it). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga6d76363dc639deb0f6d8a316d58b23d1}{C\+R\+\_\+set\+Film\+Dimensions}} (int32\+\_\+t width, int32\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em Sets the image dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga9518ba313bd84729c2414863e54b5d6f}{C\+R\+\_\+set\+Num\+Threads}} (int32\+\_\+t num\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Sets the number of threads to use for rendering. Ideally, this should be the number of cores in the system. The actual number of threads spawn is num\+\_\+threads -\/ 1 unless the use\+\_\+main\+\_\+thread flag is set to false. A value of 0 issues a serial operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga77c844ccdf749c46339d79d5613dec3a}{C\+R\+\_\+use\+Main\+Thread}} (bool use\+\_\+main\+\_\+thread)
+\begin{DoxyCompactList}\small\item\em Enables/disables the use of the main thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga20ef3b1c09e4424b0e7eb0c454233253}{C\+R\+\_\+set\+Block\+Size}} (int32\+\_\+t block\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Sets the number of pixels per 2D tile to use for multithreaded rendering. A value of 16 or 32 is a typical use case. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaefb25f52505bdf55f780f68a0da18ebd}{C\+R\+\_\+set\+Samples\+Per\+Pixel}} (int32\+\_\+t spp)
+\begin{DoxyCompactList}\small\item\em Sets the number of ray samples per pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}{C\+R\+\_\+set\+Gamma}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} gamma)
+\begin{DoxyCompactList}\small\item\em Sets the gamma correction value. This is used only when an R\+GB buffer is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga170fbbb3c14ba75fb087a6bc4ca91da0}{C\+R\+\_\+set\+Exposure}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} exposure)
+\begin{DoxyCompactList}\small\item\em Sets the exposure value to be used during the tonemapping operation. Internally, the traditional John Hable\textquotesingle{}s Uncharted 2 tonemapping operator is used. This is used only when an R\+GB buffer is enabled. Using an exposure value of 0.\+0 degrades to no tonemapping. This process is then followed by gamma correction (see \mbox{\hyperlink{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}{C\+R\+\_\+set\+Gamma}}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gad11b2e9b5851759a4e34179cb7f55c37}{C\+R\+\_\+set\+Acceleration\+Structure}} (\mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} acceleration\+\_\+structure\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Sets the acceleration structure. Simple scenes can use a simple array structure. For anything else, a B\+VH is the optimal option. Any subsequent calls to this function, overrides A\+ND D\+E\+L\+E\+T\+ES any previously allocated acceleration structure and internal data, e.\+g. primitives. This function should be called before adding any primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga61091e36fd9171a66786b16d17dc6fb4}{C\+R\+\_\+set\+Integrator}} (\mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} integrator\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Adds an integrator. Currently, Ambient Occlusion and unidirectional Path Tracing are available. A scene can be rendered multiple times with different integrators, by simply issuing calls to this function and \mbox{\hyperlink{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}{C\+R\+\_\+start}}, i.\+e. no reloading of the scene data is required. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_ga3328876cc8e901c883639c040108a185}{C\+R\+\_\+set\+Interactive\+Render}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables interactive rendering. This is useful only for integrations with a G\+UI. Enabling interactive rendering maintains all current settings with the following differences\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaf75447dc5ba8a2c019ee266553570816}{C\+R\+\_\+use\+Fast\+R\+NG}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enforces the use of Xorshift R\+NG. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gac2324b97399c14d0f5ced0bc7f8a0a7d}{C\+R\+\_\+is\+R\+G\+B\+Buffer\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if R\+GB buffer is enabled. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{group__settings_gaf6d798017bc620a021c77e02034a7c6f}{C\+R\+\_\+get\+Output\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the output name. \end{DoxyCompactList}\item 
+float $\ast$ \mbox{\hyperlink{group__settings_ga7848b69dc37042af784a76f8fd661510}{C\+R\+\_\+get\+Film\+Float\+Data\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a pointer to the internal float framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{group__settings_gafc259e6d34f1a8d075e1e71497c1e46d}{C\+R\+\_\+get\+Film\+Float\+Byte\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of bytes for the float buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__settings_ga7e35a131afd542a9896d2af3c49dbfc0}{C\+R\+\_\+get\+Film\+R\+G\+B\+Data\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a pointer to the internal R\+GB framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{group__settings_gabee84878b6cdd7cef77a12f96e1558d8}{C\+R\+\_\+get\+Film\+R\+G\+B\+Byte\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of bytes for the R\+GB buffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga68b8fe06db4a26752ca802c6cf02b809}{C\+R\+\_\+get\+Film\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the internal framebuffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gadb2de3bd8d8e791b70e868c6dd941d4c}{C\+R\+\_\+get\+Film\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the internal framebuffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga0f258b771216e16077ae0fe5cc37b22c}{C\+R\+\_\+get\+Film\+Channels}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of channels of the internal framebuffer. This is currently fixed to 3. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga69e61b0e79dcb4303b05c51c00ef499b}{C\+R\+\_\+get\+Num\+Threads}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of threads. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gad65bb7658f007b4538b3fd4ddb2dba4e}{C\+R\+\_\+uses\+Main\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Check if main thread rendering is enabled. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaae19b68067720f5ff4a80622b4c4e547}{C\+R\+\_\+get\+Block\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of pixels per 2D tile. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga9a13d5fc8019d2158f84dbfa4e9394bc}{C\+R\+\_\+get\+Samples\+Per\+Pixel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of ray samples per pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga5477d2dcdb235681384b0bc718e90628}{C\+R\+\_\+get\+Gamma}} ()
+\begin{DoxyCompactList}\small\item\em Gets the gamma correction value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga861c0cedef13ed86ec40daefd5e1bb49}{C\+R\+\_\+get\+Exposure}} ()
+\begin{DoxyCompactList}\small\item\em Gets the exposure value used during the tonemapping operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} \mbox{\hyperlink{group__settings_ga2afabcad71f77f74590d55a3481630a4}{C\+R\+\_\+get\+Acceleration\+Structure}} ()
+\begin{DoxyCompactList}\small\item\em Gets the acceleration structure type used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} \mbox{\hyperlink{group__settings_ga34cc951841f01b317bce965785226b65}{C\+R\+\_\+get\+Integrator}} ()
+\begin{DoxyCompactList}\small\item\em Gets the integrator type used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_ga0e84507872056bb89f4fc8e163d59f12}{C\+R\+\_\+is\+Interactive\+Rende\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if interactive rendering is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gaeca97415fb43ff95736c1344b348da70}{C\+R\+\_\+is\+Fast\+R\+N\+G\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if Fast R\+NG is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaacbfebbca3a175c783e63d733a4777c9}{C\+R\+\_\+set\+A\+O\+Samples\+Per\+Pixel}} (int32\+\_\+t spp)
+\begin{DoxyCompactList}\small\item\em Sets the number of AO rays to spawn for each sample per pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga670005d369909234b2e5ea4f2fb7af30}{C\+R\+\_\+set\+A\+O\+Range}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} range)
+\begin{DoxyCompactList}\small\item\em Sets the AO range of the rays. A value of 0 denotes infinite range. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaf6ed49c394a66f76fd56bfcecba63999}{C\+R\+\_\+get\+A\+O\+Samples\+Per\+Pixel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of AO rays spawned for each sample per pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga2ed48590a606f509d9c610494ad7434c}{C\+R\+\_\+get\+A\+O\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Gets the AO range of the rays. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}{C\+R\+\_\+set\+Ray\+Depth}} (int32\+\_\+t depth)
+\begin{DoxyCompactList}\small\item\em Sets the maximum depth of the rays for the path tracer. 1 is direct lighting, 2 is 1 indirect bounce, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga86fdf97fa0548a0b2a41b6adb45f39f8}{C\+R\+\_\+set\+Russian\+Roulette}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables russian roulette for path tracing. This function is also capped by the \mbox{\hyperlink{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}{C\+R\+\_\+set\+Ray\+Depth}}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaf917cd720d2de5763c71ae1b6b67f607}{C\+R\+\_\+get\+Ray\+Depth}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum depth of the rays for the path tracer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gadc63706b08947ee9030bf8705edd3552}{C\+R\+\_\+get\+Russian\+Roulette}} ()
+\begin{DoxyCompactList}\small\item\em Gets the russian roulette status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}} (\mbox{\hyperlink{group__enums_gaa33418de77c94dbbf18e1a7c3778db37}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}} dielectric)
+\begin{DoxyCompactList}\small\item\em Returns the internal index of refraction from a list of predefined dielectrics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga564972601230c8e94eb9abf5a59f40be}{C\+R\+\_\+add\+Material\+Diffuse\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse reflection material, modeled as a pure lambertian surface. It can be used to model matte materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga82419fb41b60cb3e15372395026d1f26}{C\+R\+\_\+add\+Material\+Diffuse\+Transmission}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+transmission\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse transmission material, modeled as a pure lambertian surface. It can be used to model translucent materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga3e4412df2c57a2170c634e13bf882d01}{C\+R\+\_\+add\+Material\+Diffuse}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse material representing rough reflection and transmission, modeled as a pure lambertian surface. It can be used to model translucent materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__materials_ga6fe15c4e6297efe28796362bdb2160c6}{C\+R\+\_\+get\+Conductor\+I\+OR}} (\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} conductor)
+\begin{DoxyCompactList}\small\item\em Returns the internal index of refraction from a list of predefined conductors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__materials_gab38829adfcf3dbda366d434afc2dc3da}{C\+R\+\_\+get\+Conductor\+Absorption}} (\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} conductor)
+\begin{DoxyCompactList}\small\item\em Returns the absorption coefficients from a list of predefined conductors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga89aa76fda1344f099567add621dc6976}{C\+R\+\_\+add\+Material\+Conductor}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} absorption, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a conductor material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga7609c375d43d09e499d04f3c591c2246}{C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough reflection with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model mirror materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga7ec50cefd0c4e205607a8f08a8872c86}{C\+R\+\_\+add\+Material\+Dielectric\+Specular}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough reflection and transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model glass materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_gadb829417e550f0a8cddbeaebd19733cc}{C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Transmission}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model purely transmissive surfaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga9dbf32faa3199d9945f9c5029e3ba71b}{C\+R\+\_\+add\+Material\+Diffuse\+Specular\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} specular\+\_\+reflection\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a mixed dielectric material with both diffuse and specular (both smooth/rough) reflection components. The diffuse component is modeled as a pure lambertian surface, while the specular employs an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gae19251eb53b7fcc1acea98e8f8c6c70b}{C\+R\+\_\+add\+Image}} (const uint8\+\_\+t $\ast$ptr, int32\+\_\+t width, int32\+\_\+t height, int32\+\_\+t channels, int32\+\_\+t size\+\_\+type, bool is\+\_\+srgb)
+\begin{DoxyCompactList}\small\item\em Creates an image. The data is internally allocated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gac6aac4b1d7a79b296c047b63d0efcef0}{C\+R\+\_\+add\+Image\+Checkerboard}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} tex1\+\_\+rgb, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} tex2\+\_\+rgb, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} frequency)
+\begin{DoxyCompactList}\small\item\em Creates a checkerboard texture using two different colors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gaf42de4f697dc5badf5f4a03ffd3eecb0}{C\+R\+\_\+add\+Texture\+Sampler}} (\mbox{\hyperlink{group__enums_ga9dd41d663d79d6b65ca6464e1ed7dcf2}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}} mapping\+\_\+mode, \mbox{\hyperlink{group__enums_gaadde5874628fa2ecf8234e675c4a7bca}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}} wrap\+\_\+mode, \mbox{\hyperlink{group__enums_ga91363bf13e8b0afb2280b03404766288}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}} filtering\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Creates a sampler. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gac20673dd9816a252c55d4acac18bb5f0}{C\+R\+\_\+add\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} image\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} sampler\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a sampler to be used for rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gab92ed502ff14933dba8d8b2ec105fd84}{C\+R\+\_\+add\+Material\+Diffuse\+Reflection\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s diffuse reflection color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_ga0b7540b328031f445c64372f5cfff97b}{C\+R\+\_\+add\+Material\+Diffuse\+Transmission\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s diffuse transmission color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gab19f7dab9dd5e8ca1cdf2e8856e3b29f}{C\+R\+\_\+add\+Material\+Specular\+Reflection\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s specular reflection color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gada5133e5087b96864eba1a9fecef7f95}{C\+R\+\_\+add\+Material\+Specular\+Transmission\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s specular transmission color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__transform_ga9d53ef80f93c86b6b767173eb1d08d29}{C\+R\+\_\+push\+Matrix}} (\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix)
+\begin{DoxyCompactList}\small\item\em Pushes a transformation matrix onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__transform_ga1c9b9d14279856a5d3c8fac23b6774fe}{C\+R\+\_\+pop\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Pops a transformation matrix from the stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_gad77f200fdb04a33759b38a7f8ea08afb}{C\+R\+\_\+rotate}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} degrees, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} axis)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a rotation matrix along an arbitrary axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga55793b7179a570952ba9f54715ecaa42}{C\+R\+\_\+translate}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} translate)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a translation matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga7271b59c702db444aa7950d8717a9bcc}{C\+R\+\_\+scale}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} scale)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a scale matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga98bc702f6e9a68833d41197054c0789b}{C\+R\+\_\+mul\+Matrix}} (\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix1, \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix2)
+\begin{DoxyCompactList}\small\item\em Utility function to multiply two matrices, M = M1 $\ast$ M2. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__camera_ga0f56f2d511d29ab752b2e96408b42427}{C\+R\+\_\+add\+Camera\+Thin\+Lens}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} lens\+\_\+radius, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} focal\+\_\+distance)
+\begin{DoxyCompactList}\small\item\em Creates a thinlens camera. This is essentially the perspective camera with a predefined lens radius and focal distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__camera_ga1da8cd87b6390bdbb09dd08962299d71}{C\+R\+\_\+add\+Camera\+Perspective}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Creates a perspective pinhole camera. This is essentially the thinlens camera without a predefined lens radius and focal distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__camera_ga69bd20bdfedc72521917f7341dfd11b0}{C\+R\+\_\+add\+Camera\+Orthographic}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} height, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Creates an orthographic camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga441e92793a7cb747725eba0803f5762b}{C\+R\+\_\+add\+Light\+Point\+Spot}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} falloff\+Angle, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+Angle, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} exponent)
+\begin{DoxyCompactList}\small\item\em Creates a point spotlight. This is a dirac light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga719b93acd78b08da6c35e6ceebf8f118}{C\+R\+\_\+add\+Light\+Point\+Omni}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity)
+\begin{DoxyCompactList}\small\item\em Creates a point omnidirectional light. This is a dirac light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga5f8c6c1eaf234dd9db8c5686712862dc}{C\+R\+\_\+add\+Light\+Directional}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} direction, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity\+\_\+rgb)
+\begin{DoxyCompactList}\small\item\em Creates a parallel light using a direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga094a4b471803f17e7216095ff7c1794b}{C\+R\+\_\+add\+Light\+Directional\+From\+To}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity\+\_\+rgb)
+\begin{DoxyCompactList}\small\item\em Creates a parallel light using a point and a target to generate a direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__light_ga23a5e3f5b51d9ac8d8f40507d787229b}{C\+R\+\_\+add\+Light\+Area\+Diffuse\+Emitter}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} flux, bool doublesided)
+\begin{DoxyCompactList}\small\item\em Creates an area light, modeled as a diffuse emitter. This needs to be associated with a primitive. Currently, triangles are not yet supported. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_gae99cff51e6c7bfea416288f745defc95}{C\+R\+\_\+add\+Area\+Light\+To\+Primitive}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} primitive\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} light\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates an area light with a primitive. Note that the same light source can be shared by multiple primitives. In that case, the light\textquotesingle{}s flux is scaled by each primitive\textquotesingle{}s area. This way, it is easy to associate a large polygon group with one light source. Since this method is approximate, accurate rendering requires 1 light per primitive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga47d935396f21f24c6758960fa16b2ce5}{C\+R\+\_\+reserve\+Primitives}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reserves memory for the requested number of primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga9a188f199b441eb1ff16aad955a5768b}{C\+R\+\_\+reserve\+Materials}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reserves memory for the requested number of materials. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__shape_ga06dca798097fa769ff69ee755eaeb70f}{C\+R\+\_\+get\+Num\+Primitives}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current number of primitives. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__shape_ga3ec8fb803ab19c30ab7efd4d2f5458b5}{C\+R\+\_\+get\+Num\+Materials}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current number of materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga4aeb49585d7dde4e7fa4efbeab9297a5}{C\+R\+\_\+add\+Primitive\+Sphere}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} radius, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates a sphere primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga1e9643524bae02cd0caa16ce27f427d3}{C\+R\+\_\+add\+Primitive\+Rectangle\+XZ}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the XZ axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga561a79a6514dcd38c911b7e451960e58}{C\+R\+\_\+add\+Primitive\+Rectangle\+XY}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the XY axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga9e45429199e285f45b4d11d521af624f}{C\+R\+\_\+add\+Primitive\+Rectangle\+YZ}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the YZ axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga0ab3ec8545c82454068886330a5dd677}{C\+R\+\_\+add\+Primitive\+Triangle}} (bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an empty triangle primitive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga62d284caf60fb186b7e0eab906ca3d25}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Positions}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position)
+\begin{DoxyCompactList}\small\item\em Associates a group of vertices with an existing triangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga54a75424f9b33eb51c744b9626d02bf8}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Normals}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} normal)
+\begin{DoxyCompactList}\small\item\em Associates a group of normals with an existing triangle. If these are not provided, triangle plane normals are used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga4660a70437e405ba886f347b24328529}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Texcoords}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} texcoord)
+\begin{DoxyCompactList}\small\item\em Associates a group of texcoord with an existing triangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_ga0cafce367001619449bc2c18353daaa5}{C\+R\+\_\+set\+Minimum\+Log\+Level}} (\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} type)
+\begin{DoxyCompactList}\small\item\em Sets the minimum log level to store messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} \mbox{\hyperlink{group__logging_gaab59c8a10c6adfd035b01423f3a24b69}{C\+R\+\_\+get\+Minimum\+Log\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Gets the minimum log level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_ga8e0f026f61b2c9059039beecf8397302}{C\+R\+\_\+set\+Log\+File}} (void $\ast$file)
+\begin{DoxyCompactList}\small\item\em Enables writing to an output F\+I\+LE. If disabled, the messages are written to a queue and can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{group__logging_ga5da3a8bccd0f7da7bc389c2cd06d596c}{C\+R\+\_\+get\+Log\+File}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current output F\+I\+LE. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}{C\+R\+\_\+print\+Tostdout}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables writing internal log messages. If disabled, the messages can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_gac7b3f9eecaf6cb0a0bdd0f6f7cfe3ca3}{C\+R\+\_\+is\+Print\+Tostdout\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Returns the status of printing to stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_ga440aed412e51e0bd9ec443d20674c933}{C\+R\+\_\+print\+Progress\+Bar}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables of progress bar to stdout. If disabled, the progress percentage can be polled using \mbox{\hyperlink{group__logging_ga318f09c257482854b663b8eac7f87fb9}{C\+R\+\_\+get\+Progress\+Percentage}}. Note that stdout printing must be enabled (see \mbox{\hyperlink{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}{C\+R\+\_\+print\+Tostdout}}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_ga6642c6aec159e5aeeeacc8e365e0619f}{C\+R\+\_\+\+Is\+Print\+Progress\+Bar\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Returns the status of printing the progress bar to stdout. It is suggested to disable the progress bar when verbose logging is enabled, as it may interfere with the progress bar printing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__logging_ga318f09c257482854b663b8eac7f87fb9}{C\+R\+\_\+get\+Progress\+Percentage}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the progress percentage of a running rendering process. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}} (char $\ast$msg, size\+\_\+t $\ast$msg\+\_\+length, \mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} $\ast$type)
+\begin{DoxyCompactList}\small\item\em Gets the last log message stored by the rendering engine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__debug_gae4e6b1d89d7c2ba2766daa23ae1bef2b}{C\+R\+\_\+debug\+\_\+intersect\+Pixel}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} $\ast$position, int32\+\_\+t pixel\+\_\+x, int32\+\_\+t pixel\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Debug utility that returns the intersection position at a particular pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga92ae5ec9e5e02cf588cbc6eb151162aa}{C\+R\+\_\+debug\+\_\+update\+Camera\+Perspective}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Debug utility that updates camera parameters for navigation during the interactive mode. This is only useful as part of a G\+UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga185139eb0a5379372ed56f63fd7496f6}{C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range}} (int32\+\_\+t start\+\_\+x, int32\+\_\+t start\+\_\+y, int32\+\_\+t end\+\_\+x, int32\+\_\+t end\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Debug utility that logs verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. Very useful for cases where internal values need to be viewed. Enable/\+Disable with \mbox{\hyperlink{group__debug_ga185139eb0a5379372ed56f63fd7496f6}{C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga2ed4d018c4509c58c974b241bc3f14f1}{C\+R\+\_\+debug\+\_\+enable\+Test\+Pixel\+Debug}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Debug utility to enable logging of verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__debug_ga02b7145cf6265269a53f80ffb8350a41}{C\+R\+\_\+debug\+\_\+is\+Test\+Pixel\+Debug\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Debug utility that returns if debug pixel printing is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}

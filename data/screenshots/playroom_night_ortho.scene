@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="16" log_level="info" output_name="playroom_night_ortho"/>
+    <integrator type="path_tracing" spp="4000" pt_depth="40" pt_russian_roulette="true"/>
+    <film dimensions="1920 1080" rgb_gamma="2.2" rgb_exposure="0.4"/>
+
+    <camera type="orthographic" near="0.0" far="10" ortho_height="3.6"
+    position="1.24, 1.83, 2.62" target="0.18 0.65, 0.6" up="0.0, 1.0, 0.0"/>
+
+	<directory path="../playroom"/>
+	<transform rotation="0,0,1,0" scale="0.01, 0.01, 0.01" translation="0,0,0">
+		<polygon_group file="ball.obj"/>
+		<polygon_group file="bunny.obj"/>
+		<polygon_group file="chair.obj"/>
+		<polygon_group file="env.obj"/>
+		<polygon_group file="floor.obj"/>
+		<polygon_group file="lamp.obj"/>
+		<polygon_group file="lamp_cover.obj" double_sided="true"/>
+		<polygon_group file="mobilo.obj" double_sided="true"/>
+		<polygon_group file="lunchbox.obj"/>
+		<polygon_group file="plate.obj"/>
+		<polygon_group file="poster.obj"/>
+	</transform>
+</world>

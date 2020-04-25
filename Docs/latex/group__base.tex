@@ -1,0 +1,163 @@
+\hypertarget{group__base}{}\doxysection{Base Objects and Handles}
+\label{group__base}\index{Base Objects and Handles@{Base Objects and Handles}}
+
+
+Representations for base engine objects.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}
+\begin{DoxyCompactList}\small\item\em Struct for a 3-\/dimensional vector. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}
+\begin{DoxyCompactList}\small\item\em Struct for a 4x4 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__base_ga61df8c6544a4c2dabae7825eeb67b0bd}{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}
+\begin{DoxyCompactList}\small\item\em Define to set double precision floats as default. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gab602d18b7292bc5b5eaf3840cbbad311}{V\+E\+C3}}(\+\_\+x,  \+\_\+y,  \+\_\+z)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+y,\+\_\+z\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from 3 values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga7d185ec101e0d3ddebe0298924481ebc}{V\+E\+C3\+\_\+\+X\+YZ}}(\+\_\+x)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+x,\+\_\+x\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from 1 value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gae2a8a655c5742704ca55a5420e79cdec}{V\+E\+C3\+\_\+\+A\+R\+R\+AY}}(\+\_\+x)~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x\mbox{[}0\mbox{]},\+\_\+x\mbox{[}1\mbox{]},\+\_\+x\mbox{[}2\mbox{]}\}
+\begin{DoxyCompactList}\small\item\em Vec3 constructor from array. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_gab9b48a35ed71a8812f099b1c0bba6cea}{M\+A\+T4}}(\+\_\+x0,  \+\_\+y0,  \+\_\+z0,  \+\_\+w0,  \+\_\+x1,  \+\_\+y1,  \+\_\+z1,  \+\_\+w1,  \+\_\+x2,  \+\_\+y2,  \+\_\+z2,  \+\_\+w2,  \+\_\+x3,  \+\_\+y3,  \+\_\+z3,  \+\_\+w3)~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{\+\_\+x0, \+\_\+y0, \+\_\+z0, \+\_\+w0, \+\_\+x1, \+\_\+y1, \+\_\+z1, \+\_\+w1, \+\_\+x2, \+\_\+y2, \+\_\+z2, \+\_\+w2, \+\_\+x3, \+\_\+y3, \+\_\+z3, \+\_\+w3\}
+\begin{DoxyCompactList}\small\item\em Mat4 constructor from 16 values. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga7bd97c392a1365d7e402082970d95788}{M\+A\+T4\+\_\+\+I\+D\+E\+N\+T\+I\+TY}}~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1\}
+\begin{DoxyCompactList}\small\item\em Mat4 constructor for identity matrix. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}~uint64\+\_\+t
+\begin{DoxyCompactList}\small\item\em Opaque handle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__base_ga0073e75002aab52d5a07cb43e67538e4}{C\+R\+A\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+N\+D\+LE}}~0u
+\begin{DoxyCompactList}\small\item\em Opaque invalid handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef double \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}
+\begin{DoxyCompactList}\small\item\em floating point value \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__base_ga187c30c514c38f2f2c6ed25567ead85f}{cr\+\_\+vec3}}
+\begin{DoxyCompactList}\small\item\em Struct for a 3-\/dimensional vector. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__base_ga711c803e4df67cfb57e003aad4fb85ea}{cr\+\_\+mat4}}
+\begin{DoxyCompactList}\small\item\em Struct for a 4x4 matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representations for base engine objects. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__base_ga0e58e813d60515411e6f10fe8c5b1865}\label{group__base_ga0e58e813d60515411e6f10fe8c5b1865}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!CRAY\_HANDLE@{CRAY\_HANDLE}}
+\index{CRAY\_HANDLE@{CRAY\_HANDLE}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{CRAY\_HANDLE}{CRAY\_HANDLE}}
+{\footnotesize\ttfamily \#define C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE~uint64\+\_\+t}
+
+
+
+Opaque handle. 
+
+\mbox{\Hypertarget{group__base_ga0073e75002aab52d5a07cb43e67538e4}\label{group__base_ga0073e75002aab52d5a07cb43e67538e4}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!CRAY\_INVALID\_HANDLE@{CRAY\_INVALID\_HANDLE}}
+\index{CRAY\_INVALID\_HANDLE@{CRAY\_INVALID\_HANDLE}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{CRAY\_INVALID\_HANDLE}{CRAY\_INVALID\_HANDLE}}
+{\footnotesize\ttfamily \#define C\+R\+A\+Y\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+H\+A\+N\+D\+LE~0u}
+
+
+
+Opaque invalid handle. 
+
+\mbox{\Hypertarget{group__base_ga61df8c6544a4c2dabae7825eeb67b0bd}\label{group__base_ga61df8c6544a4c2dabae7825eeb67b0bd}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!DOUBLE\_PRECISION@{DOUBLE\_PRECISION}}
+\index{DOUBLE\_PRECISION@{DOUBLE\_PRECISION}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{DOUBLE\_PRECISION}{DOUBLE\_PRECISION}}
+{\footnotesize\ttfamily \#define D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}
+
+
+
+Define to set double precision floats as default. 
+
+\mbox{\Hypertarget{group__base_gab9b48a35ed71a8812f099b1c0bba6cea}\label{group__base_gab9b48a35ed71a8812f099b1c0bba6cea}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!MAT4@{MAT4}}
+\index{MAT4@{MAT4}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{MAT4}{MAT4}}
+{\footnotesize\ttfamily \#define M\+A\+T4(\begin{DoxyParamCaption}\item[{}]{\+\_\+x0,  }\item[{}]{\+\_\+y0,  }\item[{}]{\+\_\+z0,  }\item[{}]{\+\_\+w0,  }\item[{}]{\+\_\+x1,  }\item[{}]{\+\_\+y1,  }\item[{}]{\+\_\+z1,  }\item[{}]{\+\_\+w1,  }\item[{}]{\+\_\+x2,  }\item[{}]{\+\_\+y2,  }\item[{}]{\+\_\+z2,  }\item[{}]{\+\_\+w2,  }\item[{}]{\+\_\+x3,  }\item[{}]{\+\_\+y3,  }\item[{}]{\+\_\+z3,  }\item[{}]{\+\_\+w3 }\end{DoxyParamCaption})~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{\+\_\+x0, \+\_\+y0, \+\_\+z0, \+\_\+w0, \+\_\+x1, \+\_\+y1, \+\_\+z1, \+\_\+w1, \+\_\+x2, \+\_\+y2, \+\_\+z2, \+\_\+w2, \+\_\+x3, \+\_\+y3, \+\_\+z3, \+\_\+w3\}}
+
+
+
+Mat4 constructor from 16 values. 
+
+\mbox{\Hypertarget{group__base_ga7bd97c392a1365d7e402082970d95788}\label{group__base_ga7bd97c392a1365d7e402082970d95788}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!MAT4\_IDENTITY@{MAT4\_IDENTITY}}
+\index{MAT4\_IDENTITY@{MAT4\_IDENTITY}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{MAT4\_IDENTITY}{MAT4\_IDENTITY}}
+{\footnotesize\ttfamily \#define M\+A\+T4\+\_\+\+I\+D\+E\+N\+T\+I\+TY~(\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}})\{1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1\}}
+
+
+
+Mat4 constructor for identity matrix. 
+
+\mbox{\Hypertarget{group__base_gab602d18b7292bc5b5eaf3840cbbad311}\label{group__base_gab602d18b7292bc5b5eaf3840cbbad311}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!VEC3@{VEC3}}
+\index{VEC3@{VEC3}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{VEC3}{VEC3}}
+{\footnotesize\ttfamily \#define V\+E\+C3(\begin{DoxyParamCaption}\item[{}]{\+\_\+x,  }\item[{}]{\+\_\+y,  }\item[{}]{\+\_\+z }\end{DoxyParamCaption})~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+y,\+\_\+z\}}
+
+
+
+Vec3 constructor from 3 values. 
+
+\mbox{\Hypertarget{group__base_gae2a8a655c5742704ca55a5420e79cdec}\label{group__base_gae2a8a655c5742704ca55a5420e79cdec}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!VEC3\_ARRAY@{VEC3\_ARRAY}}
+\index{VEC3\_ARRAY@{VEC3\_ARRAY}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{VEC3\_ARRAY}{VEC3\_ARRAY}}
+{\footnotesize\ttfamily \#define V\+E\+C3\+\_\+\+A\+R\+R\+AY(\begin{DoxyParamCaption}\item[{}]{\+\_\+x }\end{DoxyParamCaption})~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x\mbox{[}0\mbox{]},\+\_\+x\mbox{[}1\mbox{]},\+\_\+x\mbox{[}2\mbox{]}\}}
+
+
+
+Vec3 constructor from array. 
+
+\mbox{\Hypertarget{group__base_ga7d185ec101e0d3ddebe0298924481ebc}\label{group__base_ga7d185ec101e0d3ddebe0298924481ebc}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!VEC3\_XYZ@{VEC3\_XYZ}}
+\index{VEC3\_XYZ@{VEC3\_XYZ}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{VEC3\_XYZ}{VEC3\_XYZ}}
+{\footnotesize\ttfamily \#define V\+E\+C3\+\_\+\+X\+YZ(\begin{DoxyParamCaption}\item[{}]{\+\_\+x }\end{DoxyParamCaption})~(\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}})\{\+\_\+x,\+\_\+x,\+\_\+x\}}
+
+
+
+Vec3 constructor from 1 value. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group__base_gac679409efbbe825bcee7bc9437d10194}\label{group__base_gac679409efbbe825bcee7bc9437d10194}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!cr\_float@{cr\_float}}
+\index{cr\_float@{cr\_float}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{cr\_float}{cr\_float}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}
+
+
+
+floating point value 
+
+\mbox{\Hypertarget{group__base_ga711c803e4df67cfb57e003aad4fb85ea}\label{group__base_ga711c803e4df67cfb57e003aad4fb85ea}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!cr\_mat4@{cr\_mat4}}
+\index{cr\_mat4@{cr\_mat4}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{cr\_mat4}{cr\_mat4}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}  \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}}
+
+
+
+Struct for a 4x4 matrix. 
+
+\mbox{\Hypertarget{group__base_ga187c30c514c38f2f2c6ed25567ead85f}\label{group__base_ga187c30c514c38f2f2c6ed25567ead85f}} 
+\index{Base Objects and Handles@{Base Objects and Handles}!cr\_vec3@{cr\_vec3}}
+\index{cr\_vec3@{cr\_vec3}!Base Objects and Handles@{Base Objects and Handles}}
+\doxysubsubsection{\texorpdfstring{cr\_vec3}{cr\_vec3}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}  \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}
+
+
+
+Struct for a 3-\/dimensional vector. 
+

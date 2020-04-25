@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="16" log_level="info" output_name="playroom_ortho"/>
+    <integrator type="ambient_occlusion" spp="20" ao_samples="2" ao_range="2.5"/>
+    <integrator type="path_tracing" spp="20" pt_depth="2" pt_russian_roulette="true"/>
+    <film dimensions="512 512" rgb_gamma="2.2" rgb_exposure="6.0"/>
+
+    <camera type="orthographic" near="0.0" far="10" ortho_height="3.6"
+    position="1.24, 1.83, 2.62" target="0.18 0.65, 0.6" up="0.0, 1.0, 0.0"/>
+
+    <dielectric name="null" diffuse_reflection="0.0 0.0 0.0"/>
+    <sphere name="light" center="0.99, 0.84, 1.95" radius="0.05" material="null"/>
+    <arealight flux="10 9 8" primitive="light" double_sided="true"/>
+
+	<directory path="../playroom"/>
+	<transform rotation="0,0,1,0" scale="0.01, 0.01, 0.01" translation="0,0,0">
+		<polygon_group file="ball.obj"/>
+		<polygon_group file="bunny.obj"/>
+		<polygon_group file="chair.obj"/>
+		<polygon_group file="env.obj"/>
+		<polygon_group file="floor.obj"/>
+		<polygon_group file="lamp.obj"/>
+		<polygon_group file="lamp_cover_unlit.obj" double_sided="true"/>
+		<polygon_group file="mobilo_unlit.obj" double_sided="true"/>
+		<polygon_group file="lunchbox.obj"/>
+		<polygon_group file="plate.obj"/>
+		<polygon_group file="poster.obj"/>
+	</transform>
+</world>

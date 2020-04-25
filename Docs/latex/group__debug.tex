@@ -1,0 +1,121 @@
+\hypertarget{group__debug}{}\doxysection{Debug A\+PI}
+\label{group__debug}\index{Debug API@{Debug API}}
+
+
+Debugging functionality. Used internally for testing purposes.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__debug_gae4e6b1d89d7c2ba2766daa23ae1bef2b}{C\+R\+\_\+debug\+\_\+intersect\+Pixel}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} $\ast$position, int32\+\_\+t pixel\+\_\+x, int32\+\_\+t pixel\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Debug utility that returns the intersection position at a particular pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga92ae5ec9e5e02cf588cbc6eb151162aa}{C\+R\+\_\+debug\+\_\+update\+Camera\+Perspective}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Debug utility that updates camera parameters for navigation during the interactive mode. This is only useful as part of a G\+UI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga185139eb0a5379372ed56f63fd7496f6}{C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range}} (int32\+\_\+t start\+\_\+x, int32\+\_\+t start\+\_\+y, int32\+\_\+t end\+\_\+x, int32\+\_\+t end\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Debug utility that logs verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. Very useful for cases where internal values need to be viewed. Enable/\+Disable with \mbox{\hyperlink{group__debug_ga185139eb0a5379372ed56f63fd7496f6}{C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__debug_ga2ed4d018c4509c58c974b241bc3f14f1}{C\+R\+\_\+debug\+\_\+enable\+Test\+Pixel\+Debug}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Debug utility to enable logging of verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__debug_ga02b7145cf6265269a53f80ffb8350a41}{C\+R\+\_\+debug\+\_\+is\+Test\+Pixel\+Debug\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Debug utility that returns if debug pixel printing is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Debugging functionality. Used internally for testing purposes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__debug_ga2ed4d018c4509c58c974b241bc3f14f1}\label{group__debug_ga2ed4d018c4509c58c974b241bc3f14f1}} 
+\index{Debug API@{Debug API}!CR\_debug\_enableTestPixelDebug@{CR\_debug\_enableTestPixelDebug}}
+\index{CR\_debug\_enableTestPixelDebug@{CR\_debug\_enableTestPixelDebug}!Debug API@{Debug API}}
+\doxysubsubsection{\texorpdfstring{CR\_debug\_enableTestPixelDebug()}{CR\_debug\_enableTestPixelDebug()}}
+{\footnotesize\ttfamily void C\+R\+\_\+debug\+\_\+enable\+Test\+Pixel\+Debug (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Debug utility to enable logging of verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag indicating whether debug pixel info will be printed for the given range. (Default\+: false) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__debug_gae4e6b1d89d7c2ba2766daa23ae1bef2b}\label{group__debug_gae4e6b1d89d7c2ba2766daa23ae1bef2b}} 
+\index{Debug API@{Debug API}!CR\_debug\_intersectPixel@{CR\_debug\_intersectPixel}}
+\index{CR\_debug\_intersectPixel@{CR\_debug\_intersectPixel}!Debug API@{Debug API}}
+\doxysubsubsection{\texorpdfstring{CR\_debug\_intersectPixel()}{CR\_debug\_intersectPixel()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+debug\+\_\+intersect\+Pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} $\ast$}]{position,  }\item[{int32\+\_\+t}]{pixel\+\_\+x,  }\item[{int32\+\_\+t}]{pixel\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Debug utility that returns the intersection position at a particular pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Stores the intersection position. \\
+\hline
+{\em pixel\+\_\+x} & The x pixel to test for intersection. \\
+\hline
+{\em pixel\+\_\+y} & The y pixel to test for intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if there is an intersection, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__debug_ga02b7145cf6265269a53f80ffb8350a41}\label{group__debug_ga02b7145cf6265269a53f80ffb8350a41}} 
+\index{Debug API@{Debug API}!CR\_debug\_isTestPixelDebugEnabled@{CR\_debug\_isTestPixelDebugEnabled}}
+\index{CR\_debug\_isTestPixelDebugEnabled@{CR\_debug\_isTestPixelDebugEnabled}!Debug API@{Debug API}}
+\doxysubsubsection{\texorpdfstring{CR\_debug\_isTestPixelDebugEnabled()}{CR\_debug\_isTestPixelDebugEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+debug\+\_\+is\+Test\+Pixel\+Debug\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Debug utility that returns if debug pixel printing is enabled. 
+
+\mbox{\Hypertarget{group__debug_ga185139eb0a5379372ed56f63fd7496f6}\label{group__debug_ga185139eb0a5379372ed56f63fd7496f6}} 
+\index{Debug API@{Debug API}!CR\_debug\_setTestPixelRange@{CR\_debug\_setTestPixelRange}}
+\index{CR\_debug\_setTestPixelRange@{CR\_debug\_setTestPixelRange}!Debug API@{Debug API}}
+\doxysubsubsection{\texorpdfstring{CR\_debug\_setTestPixelRange()}{CR\_debug\_setTestPixelRange()}}
+{\footnotesize\ttfamily void C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{start\+\_\+x,  }\item[{int32\+\_\+t}]{start\+\_\+y,  }\item[{int32\+\_\+t}]{end\+\_\+x,  }\item[{int32\+\_\+t}]{end\+\_\+y }\end{DoxyParamCaption})}
+
+
+
+Debug utility that logs verbose messages in debug mode for a particular pixel range \mbox{[}start, stop\mbox{]}. Very useful for cases where internal values need to be viewed. Enable/\+Disable with \mbox{\hyperlink{group__debug_ga185139eb0a5379372ed56f63fd7496f6}{C\+R\+\_\+debug\+\_\+set\+Test\+Pixel\+Range}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+x} & The start pixel x value to start logging (Default\+: none). \\
+\hline
+{\em start\+\_\+y} & The start pixel y value to start logging (Default\+: none). \\
+\hline
+{\em end\+\_\+x} & The end pixel x value to stop logging (Default\+: none). \\
+\hline
+{\em end\+\_\+y} & The end pixel y value to stop logging (Default\+: none). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__debug_ga92ae5ec9e5e02cf588cbc6eb151162aa}\label{group__debug_ga92ae5ec9e5e02cf588cbc6eb151162aa}} 
+\index{Debug API@{Debug API}!CR\_debug\_updateCameraPerspective@{CR\_debug\_updateCameraPerspective}}
+\index{CR\_debug\_updateCameraPerspective@{CR\_debug\_updateCameraPerspective}!Debug API@{Debug API}}
+\doxysubsubsection{\texorpdfstring{CR\_debug\_updateCameraPerspective()}{CR\_debug\_updateCameraPerspective()}}
+{\footnotesize\ttfamily void C\+R\+\_\+debug\+\_\+update\+Camera\+Perspective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{up,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{aperture,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{near,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{far }\end{DoxyParamCaption})}
+
+
+
+Debug utility that updates camera parameters for navigation during the interactive mode. This is only useful as part of a G\+UI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the camera in world units. \\
+\hline
+{\em target} & The target of the camera in world units. \\
+\hline
+{\em up} & The up vector of the camera. This does not need to be accurate as it gets recalculated internally. \\
+\hline
+{\em aperture} & The vertical F\+OV of the camera. \\
+\hline
+{\em near} & The near field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+{\em far} & The far field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+\end{DoxyParams}

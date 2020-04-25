@@ -1,0 +1,260 @@
+\hypertarget{group__materials}{}\doxysection{Materials A\+PI}
+\label{group__materials}\index{Materials API@{Materials API}}
+
+
+Functions for the creation and handling of materials.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}} (\mbox{\hyperlink{group__enums_gaa33418de77c94dbbf18e1a7c3778db37}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}} dielectric)
+\begin{DoxyCompactList}\small\item\em Returns the internal index of refraction from a list of predefined dielectrics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga564972601230c8e94eb9abf5a59f40be}{C\+R\+\_\+add\+Material\+Diffuse\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse reflection material, modeled as a pure lambertian surface. It can be used to model matte materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga82419fb41b60cb3e15372395026d1f26}{C\+R\+\_\+add\+Material\+Diffuse\+Transmission}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+transmission\+\_\+color)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse transmission material, modeled as a pure lambertian surface. It can be used to model translucent materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga3e4412df2c57a2170c634e13bf882d01}{C\+R\+\_\+add\+Material\+Diffuse}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Creates a diffuse material representing rough reflection and transmission, modeled as a pure lambertian surface. It can be used to model translucent materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__materials_ga6fe15c4e6297efe28796362bdb2160c6}{C\+R\+\_\+get\+Conductor\+I\+OR}} (\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} conductor)
+\begin{DoxyCompactList}\small\item\em Returns the internal index of refraction from a list of predefined conductors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} \mbox{\hyperlink{group__materials_gab38829adfcf3dbda366d434afc2dc3da}{C\+R\+\_\+get\+Conductor\+Absorption}} (\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}} conductor)
+\begin{DoxyCompactList}\small\item\em Returns the absorption coefficients from a list of predefined conductors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga89aa76fda1344f099567add621dc6976}{C\+R\+\_\+add\+Material\+Conductor}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} absorption, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a conductor material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga7609c375d43d09e499d04f3c591c2246}{C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough reflection with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model mirror materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga7ec50cefd0c4e205607a8f08a8872c86}{C\+R\+\_\+add\+Material\+Dielectric\+Specular}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough reflection and transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model glass materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_gadb829417e550f0a8cddbeaebd19733cc}{C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Transmission}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} transmission\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a dielectric material representing smooth/rough transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model purely transmissive surfaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__materials_ga9dbf32faa3199d9945f9c5029e3ba71b}{C\+R\+\_\+add\+Material\+Diffuse\+Specular\+Reflection}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} diffuse\+\_\+reflection\+\_\+color, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} specular\+\_\+reflection\+\_\+color, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} eta\+\_\+t, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} roughness)
+\begin{DoxyCompactList}\small\item\em Creates a mixed dielectric material with both diffuse and specular (both smooth/rough) reflection components. The diffuse component is modeled as a pure lambertian surface, while the specular employs an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for the creation and handling of materials. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__materials_ga89aa76fda1344f099567add621dc6976}\label{group__materials_ga89aa76fda1344f099567add621dc6976}} 
+\index{Materials API@{Materials API}!CR\_addMaterialConductor@{CR\_addMaterialConductor}}
+\index{CR\_addMaterialConductor@{CR\_addMaterialConductor}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialConductor()}{CR\_addMaterialConductor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Conductor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{reflection\+\_\+color,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{absorption,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{eta\+\_\+t,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{roughness }\end{DoxyParamCaption})}
+
+
+
+Creates a conductor material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflection\+\_\+color} & The reflection color of the component. This can be used for artistic purposes, as the material\textquotesingle{}s physical color is dictated by the other parameters. \\
+\hline
+{\em absorption} & The absorption coefficients. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_gab38829adfcf3dbda366d434afc2dc3da}{C\+R\+\_\+get\+Conductor\+Absorption}}. \\
+\hline
+{\em eta\+\_\+t} & The index of refraction. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_ga6fe15c4e6297efe28796362bdb2160c6}{C\+R\+\_\+get\+Conductor\+I\+OR}}. \\
+\hline
+{\em roughness} & The roughness parameter of the specular component. 0 denotes a perfectly smooth (dirac) surface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga7ec50cefd0c4e205607a8f08a8872c86}\label{group__materials_ga7ec50cefd0c4e205607a8f08a8872c86}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDielectricSpecular@{CR\_addMaterialDielectricSpecular}}
+\index{CR\_addMaterialDielectricSpecular@{CR\_addMaterialDielectricSpecular}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDielectricSpecular()}{CR\_addMaterialDielectricSpecular()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Dielectric\+Specular (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{reflection\+\_\+color,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{transmission\+\_\+color,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{eta\+\_\+t,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{roughness }\end{DoxyParamCaption})}
+
+
+
+Creates a dielectric material representing smooth/rough reflection and transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model glass materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflection\+\_\+color} & The reflection color of the specular component. \\
+\hline
+{\em transmission\+\_\+color} & The transmission color of the specular component. \\
+\hline
+{\em eta\+\_\+t} & The index of refraction. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}}. \\
+\hline
+{\em roughness} & The roughness parameter of the specular component. 0 denotes a perfectly smooth (dirac) surface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga7609c375d43d09e499d04f3c591c2246}\label{group__materials_ga7609c375d43d09e499d04f3c591c2246}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDielectricSpecularReflection@{CR\_addMaterialDielectricSpecularReflection}}
+\index{CR\_addMaterialDielectricSpecularReflection@{CR\_addMaterialDielectricSpecularReflection}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDielectricSpecularReflection()}{CR\_addMaterialDielectricSpecularReflection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Reflection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{reflection\+\_\+color,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{roughness }\end{DoxyParamCaption})}
+
+
+
+Creates a dielectric material representing smooth/rough reflection with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model mirror materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reflection\+\_\+color} & The reflection color of the specular component. \\
+\hline
+{\em roughness} & The roughness parameter of the specular component. 0 denotes a perfectly smooth (dirac) surface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_gadb829417e550f0a8cddbeaebd19733cc}\label{group__materials_gadb829417e550f0a8cddbeaebd19733cc}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDielectricSpecularTransmission@{CR\_addMaterialDielectricSpecularTransmission}}
+\index{CR\_addMaterialDielectricSpecularTransmission@{CR\_addMaterialDielectricSpecularTransmission}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDielectricSpecularTransmission()}{CR\_addMaterialDielectricSpecularTransmission()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Dielectric\+Specular\+Transmission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{transmission\+\_\+color,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{eta\+\_\+t,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{roughness }\end{DoxyParamCaption})}
+
+
+
+Creates a dielectric material representing smooth/rough transmission with an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. It can be used to model purely transmissive surfaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transmission\+\_\+color} & The transmission color of the specular component. \\
+\hline
+{\em eta\+\_\+t} & The index of refraction. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}}. \\
+\hline
+{\em roughness} & The roughness parameter of the specular component. 0 denotes a perfectly smooth (dirac) surface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga3e4412df2c57a2170c634e13bf882d01}\label{group__materials_ga3e4412df2c57a2170c634e13bf882d01}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDiffuse@{CR\_addMaterialDiffuse}}
+\index{CR\_addMaterialDiffuse@{CR\_addMaterialDiffuse}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuse()}{CR\_addMaterialDiffuse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Diffuse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{diffuse\+\_\+reflection\+\_\+color,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{diffuse\+\_\+transmission\+\_\+color,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{eta\+\_\+t }\end{DoxyParamCaption})}
+
+
+
+Creates a diffuse material representing rough reflection and transmission, modeled as a pure lambertian surface. It can be used to model translucent materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse\+\_\+reflection\+\_\+color} & The reflection color of the material. \\
+\hline
+{\em diffuse\+\_\+transmission\+\_\+color} & The transmission color of the material. \\
+\hline
+{\em eta\+\_\+t} & The index of refraction. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__materials_ga564972601230c8e94eb9abf5a59f40be}\label{group__materials_ga564972601230c8e94eb9abf5a59f40be}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDiffuseReflection@{CR\_addMaterialDiffuseReflection}}
+\index{CR\_addMaterialDiffuseReflection@{CR\_addMaterialDiffuseReflection}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuseReflection()}{CR\_addMaterialDiffuseReflection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Diffuse\+Reflection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{diffuse\+\_\+reflection\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Creates a diffuse reflection material, modeled as a pure lambertian surface. It can be used to model matte materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse\+\_\+reflection\+\_\+color} & The reflection color of the material. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga9dbf32faa3199d9945f9c5029e3ba71b}\label{group__materials_ga9dbf32faa3199d9945f9c5029e3ba71b}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDiffuseSpecularReflection@{CR\_addMaterialDiffuseSpecularReflection}}
+\index{CR\_addMaterialDiffuseSpecularReflection@{CR\_addMaterialDiffuseSpecularReflection}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuseSpecularReflection()}{CR\_addMaterialDiffuseSpecularReflection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Diffuse\+Specular\+Reflection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{diffuse\+\_\+reflection\+\_\+color,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{specular\+\_\+reflection\+\_\+color,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{eta\+\_\+t,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{roughness }\end{DoxyParamCaption})}
+
+
+
+Creates a mixed dielectric material with both diffuse and specular (both smooth/rough) reflection components. The diffuse component is modeled as a pure lambertian surface, while the specular employs an isotropic Trowbridge-\/\+Reitz(G\+GX) microfacet model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse\+\_\+reflection\+\_\+color} & The reflection color of the diffuse component. \\
+\hline
+{\em specular\+\_\+reflection\+\_\+color} & The reflection color of the specular component. \\
+\hline
+{\em eta\+\_\+t} & The index of refraction. This can be provided directly or through the list of predefined materials using \mbox{\hyperlink{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}{C\+R\+\_\+get\+Dielectric\+I\+OR}}. \\
+\hline
+{\em roughness} & The roughness parameter of the specular component. 0 denotes a perfectly smooth (dirac) surface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the material to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga82419fb41b60cb3e15372395026d1f26}\label{group__materials_ga82419fb41b60cb3e15372395026d1f26}} 
+\index{Materials API@{Materials API}!CR\_addMaterialDiffuseTransmission@{CR\_addMaterialDiffuseTransmission}}
+\index{CR\_addMaterialDiffuseTransmission@{CR\_addMaterialDiffuseTransmission}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuseTransmission()}{CR\_addMaterialDiffuseTransmission()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Material\+Diffuse\+Transmission (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{diffuse\+\_\+transmission\+\_\+color }\end{DoxyParamCaption})}
+
+
+
+Creates a diffuse transmission material, modeled as a pure lambertian surface. It can be used to model translucent materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse\+\_\+transmission\+\_\+color} & The transmission color of the material. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__materials_gab38829adfcf3dbda366d434afc2dc3da}\label{group__materials_gab38829adfcf3dbda366d434afc2dc3da}} 
+\index{Materials API@{Materials API}!CR\_getConductorAbsorption@{CR\_getConductorAbsorption}}
+\index{CR\_getConductorAbsorption@{CR\_getConductorAbsorption}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_getConductorAbsorption()}{CR\_getConductorAbsorption()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} C\+R\+\_\+get\+Conductor\+Absorption (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}}}]{conductor }\end{DoxyParamCaption})}
+
+
+
+Returns the absorption coefficients from a list of predefined conductors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conductor} & The conductor type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of refraction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_ga6fe15c4e6297efe28796362bdb2160c6}\label{group__materials_ga6fe15c4e6297efe28796362bdb2160c6}} 
+\index{Materials API@{Materials API}!CR\_getConductorIOR@{CR\_getConductorIOR}}
+\index{CR\_getConductorIOR@{CR\_getConductorIOR}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_getConductorIOR()}{CR\_getConductorIOR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} C\+R\+\_\+get\+Conductor\+I\+OR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_gaacc25cc4e4f10df1c750216ead384e43}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+C\+O\+N\+D\+U\+C\+T\+O\+RS}}}]{conductor }\end{DoxyParamCaption})}
+
+
+
+Returns the internal index of refraction from a list of predefined conductors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conductor} & The conductor type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of refraction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}\label{group__materials_gaba9ac8fa1c03c6df8c217ba3775b5ae3}} 
+\index{Materials API@{Materials API}!CR\_getDielectricIOR@{CR\_getDielectricIOR}}
+\index{CR\_getDielectricIOR@{CR\_getDielectricIOR}!Materials API@{Materials API}}
+\doxysubsubsection{\texorpdfstring{CR\_getDielectricIOR()}{CR\_getDielectricIOR()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} C\+R\+\_\+get\+Dielectric\+I\+OR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_gaa33418de77c94dbbf18e1a7c3778db37}{C\+R\+A\+Y\+\_\+\+I\+O\+R\+\_\+\+D\+I\+E\+L\+E\+C\+T\+R\+I\+CS}}}]{dielectric }\end{DoxyParamCaption})}
+
+
+
+Returns the internal index of refraction from a list of predefined dielectrics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dielectric} & The dielectric type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of refraction. 
+\end{DoxyReturn}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="16" log_level="info" output_name="playroom_ao"/>
+    <integrator type="ambient_occlusion" spp="1000" ao_samples="20" ao_range="2.25"/>
+    <film dimensions="1920 1080" rgb_gamma="1.0" rgb_exposure="0.0"/>
+
+    <camera type="perspective" aperture="45.0" near="0.1" far="10" position="-0.15, 0.3, 1.2" target="-0.15, 0.3, -2" up="0.0, 1.0, 0.0"/>
+
+	<directory path="../playroom"/>
+	<transform rotation="0,0,1,0" scale="0.01, 0.01, 0.01" translation="0,0,0">
+		<polygon_group file="ball.obj"/>
+		<polygon_group file="bunny.obj"/>
+		<polygon_group file="chair.obj"/>
+		<polygon_group file="env.obj"/>
+		<polygon_group file="floor.obj"/>
+		<polygon_group file="lamp.obj"/>
+		<polygon_group file="lamp_cover_unlit.obj" double_sided="true"/>
+		<polygon_group file="mobilo_unlit.obj" double_sided="true"/>
+		<polygon_group file="lunchbox.obj"/>
+		<polygon_group file="plate.obj"/>
+		<polygon_group file="poster.obj"/>
+	</transform>
+</world>

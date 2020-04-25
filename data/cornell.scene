@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="32" log_level="info" output_name="cornell"/>
+    <integrator type="ambient_occlusion" spp="20" ao_samples="10" ao_range="0"/>
+    <integrator type="path_tracing" spp="20" pt_depth="3" pt_russian_roulette="true"/>
+    <film dimensions="512 512" rgb_gamma="2.2" rgb_exposure="4.0"/>
+
+    <transform translation="0.0, 0.0, -500000">
+    <camera type="perspective" aperture="35.0" near="0.1" far="100" position="0.0, 0.0, 0" target="0.0, 0.0, -3.0" up="0.0, 1.0, 0.0"/>
+
+        <transform translation="0.0, 0.0, -4.1">
+        <dielectric name="null" diffuse_reflection="0.0 0.0 0.0"/>
+        <transform translation="0.0, 0.99, 0.0">
+            <rectangle name="light" type="xz" min="-0.25 -0.25" max="0.25 0.25" flip_normals="false" double_sided="true" material="null"/>
+        </transform>
+        <arealight flux="17.0, 12.0, 4.0" primitive="light" double_sided="true"/>
+
+        <dielectric name="white" diffuse_reflection="0.725, 0.71, 0.68"/>
+        <transform translation="0.0, 1.0, 0.0">
+            <rectangle type="xz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white"/>
+        </transform>
+        <transform translation="0.0, -1.0, 0.0">
+            <rectangle type="xz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="true" material="white"/>
+        </transform>
+        <transform translation="0.0, 0.0, -1.0">
+            <rectangle type="xy" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white"/>
+        </transform>
+        <dielectric name="red" diffuse_reflection="0.63, 0.065, 0.05"/>
+        <transform translation="-1.0, 0.0, 0.0">
+            <rectangle type="yz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="true" material="red"/>
+        </transform>
+        <dielectric name="green" diffuse_reflection="0.14, 0.45, 0.091"/>
+        <transform translation="1.0, 0.0, 0.0">
+            <rectangle type="yz" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="green"/>
+        </transform>
+
+        <transform translation="0.0, 0.2, 0.0">
+            <dielectric name="mirror" specular_reflection="1 1 1" roughness="0.0"/>
+            <transform translation="0.0, 0.0, 0.0">
+                <sphere name="s1" center="-0.75, -1.0, 0.0" radius="0.2" double_sided="false" material="mirror"/>
+            </transform>
+            <metal name="copper" specular_reflection="1 1 1" roughness="0.0" predefined="copper"/>
+            <transform translation="0.0, 0.0, 0.0">
+                <sphere name="s2" center="-0.25, -1.0, 0.0" radius="0.2" material="copper"/>
+            </transform>
+            <dielectric name="diffuse_reflection_transmission" diffuse_reflection="1 1 1" diffuse_transmission="0.1 0.1 0.8" eta_t="1.55"/>
+            <transform translation="0.0, 0.0, 0.0">
+                <sphere name="s4" center="0.25, -1.0, 0.0" radius="0.2" material="diffuse_reflection_transmission"/>
+            </transform>
+            <dielectric name="diffuse_orange_id" diffuse_reflection="0.8, 0.8, 0.3"/>
+            <transform translation="0.0, 0.0, 0.0">
+                <sphere name="s3" center="0.75, -1.0, 0.0" radius="0.2" material="diffuse_orange_id"/>
+            </transform>
+        </transform>
+    </transform>
+    </transform>
+
+</world>

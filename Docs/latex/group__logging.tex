@@ -1,0 +1,185 @@
+\hypertarget{group__logging}{}\doxysection{Logging A\+PI}
+\label{group__logging}\index{Logging API@{Logging API}}
+
+
+Functions for message logging and progress reporting.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__logging_ga0cafce367001619449bc2c18353daaa5}{C\+R\+\_\+set\+Minimum\+Log\+Level}} (\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} type)
+\begin{DoxyCompactList}\small\item\em Sets the minimum log level to store messages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} \mbox{\hyperlink{group__logging_gaab59c8a10c6adfd035b01423f3a24b69}{C\+R\+\_\+get\+Minimum\+Log\+Level}} ()
+\begin{DoxyCompactList}\small\item\em Gets the minimum log level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_ga8e0f026f61b2c9059039beecf8397302}{C\+R\+\_\+set\+Log\+File}} (void $\ast$file)
+\begin{DoxyCompactList}\small\item\em Enables writing to an output F\+I\+LE. If disabled, the messages are written to a queue and can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{group__logging_ga5da3a8bccd0f7da7bc389c2cd06d596c}{C\+R\+\_\+get\+Log\+File}} ()
+\begin{DoxyCompactList}\small\item\em Gets the current output F\+I\+LE. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}{C\+R\+\_\+print\+Tostdout}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables writing internal log messages. If disabled, the messages can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_gac7b3f9eecaf6cb0a0bdd0f6f7cfe3ca3}{C\+R\+\_\+is\+Print\+Tostdout\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Returns the status of printing to stdout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__logging_ga440aed412e51e0bd9ec443d20674c933}{C\+R\+\_\+print\+Progress\+Bar}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables of progress bar to stdout. If disabled, the progress percentage can be polled using \mbox{\hyperlink{group__logging_ga318f09c257482854b663b8eac7f87fb9}{C\+R\+\_\+get\+Progress\+Percentage}}. Note that stdout printing must be enabled (see \mbox{\hyperlink{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}{C\+R\+\_\+print\+Tostdout}}). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_ga6642c6aec159e5aeeeacc8e365e0619f}{C\+R\+\_\+\+Is\+Print\+Progress\+Bar\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Returns the status of printing the progress bar to stdout. It is suggested to disable the progress bar when verbose logging is enabled, as it may interfere with the progress bar printing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__logging_ga318f09c257482854b663b8eac7f87fb9}{C\+R\+\_\+get\+Progress\+Percentage}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the progress percentage of a running rendering process. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}} (char $\ast$msg, size\+\_\+t $\ast$msg\+\_\+length, \mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} $\ast$type)
+\begin{DoxyCompactList}\small\item\em Gets the last log message stored by the rendering engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for message logging and progress reporting. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}\label{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}} 
+\index{Logging API@{Logging API}!CR\_getLastLogMessage@{CR\_getLastLogMessage}}
+\index{CR\_getLastLogMessage@{CR\_getLastLogMessage}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_getLastLogMessage()}{CR\_getLastLogMessage()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+get\+Last\+Log\+Message (\begin{DoxyParamCaption}\item[{char $\ast$}]{msg,  }\item[{size\+\_\+t $\ast$}]{msg\+\_\+length,  }\item[{\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} $\ast$}]{type }\end{DoxyParamCaption})}
+
+
+
+Gets the last log message stored by the rendering engine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & A preallocated buffer to store the message. A size of 1024 is a good choice. \\
+\hline
+{\em msg\+\_\+length} & The actual length of the msg buffer. If the stored log message is larger, nothing is stored on the buffer and this value contains the required buffer size to use in a subsequent operation. \\
+\hline
+{\em type} & The logging message type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if a message has been successfully stored, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_ga5da3a8bccd0f7da7bc389c2cd06d596c}\label{group__logging_ga5da3a8bccd0f7da7bc389c2cd06d596c}} 
+\index{Logging API@{Logging API}!CR\_getLogFile@{CR\_getLogFile}}
+\index{CR\_getLogFile@{CR\_getLogFile}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_getLogFile()}{CR\_getLogFile()}}
+{\footnotesize\ttfamily void$\ast$ C\+R\+\_\+get\+Log\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the current output F\+I\+LE. 
+
+\begin{DoxyReturn}{Returns}
+Returns the F\+I\+LE pointer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_gaab59c8a10c6adfd035b01423f3a24b69}\label{group__logging_gaab59c8a10c6adfd035b01423f3a24b69}} 
+\index{Logging API@{Logging API}!CR\_getMinimumLogLevel@{CR\_getMinimumLogLevel}}
+\index{CR\_getMinimumLogLevel@{CR\_getMinimumLogLevel}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_getMinimumLogLevel()}{CR\_getMinimumLogLevel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}} C\+R\+\_\+get\+Minimum\+Log\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the minimum log level. 
+
+\begin{DoxyReturn}{Returns}
+The minimum log level. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_ga318f09c257482854b663b8eac7f87fb9}\label{group__logging_ga318f09c257482854b663b8eac7f87fb9}} 
+\index{Logging API@{Logging API}!CR\_getProgressPercentage@{CR\_getProgressPercentage}}
+\index{CR\_getProgressPercentage@{CR\_getProgressPercentage}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_getProgressPercentage()}{CR\_getProgressPercentage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} C\+R\+\_\+get\+Progress\+Percentage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the progress percentage of a running rendering process. 
+
+\begin{DoxyReturn}{Returns}
+The progress percentage in the range \mbox{[}0-\/100\mbox{]} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_ga6642c6aec159e5aeeeacc8e365e0619f}\label{group__logging_ga6642c6aec159e5aeeeacc8e365e0619f}} 
+\index{Logging API@{Logging API}!CR\_IsPrintProgressBarEnabled@{CR\_IsPrintProgressBarEnabled}}
+\index{CR\_IsPrintProgressBarEnabled@{CR\_IsPrintProgressBarEnabled}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_IsPrintProgressBarEnabled()}{CR\_IsPrintProgressBarEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+\+Is\+Print\+Progress\+Bar\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the status of printing the progress bar to stdout. It is suggested to disable the progress bar when verbose logging is enabled, as it may interfere with the progress bar printing. 
+
+\begin{DoxyReturn}{Returns}
+True if printing the progress bar to stdout is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_gac7b3f9eecaf6cb0a0bdd0f6f7cfe3ca3}\label{group__logging_gac7b3f9eecaf6cb0a0bdd0f6f7cfe3ca3}} 
+\index{Logging API@{Logging API}!CR\_isPrintTostdoutEnabled@{CR\_isPrintTostdoutEnabled}}
+\index{CR\_isPrintTostdoutEnabled@{CR\_isPrintTostdoutEnabled}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_isPrintTostdoutEnabled()}{CR\_isPrintTostdoutEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+is\+Print\+Tostdout\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the status of printing to stdout. 
+
+\begin{DoxyReturn}{Returns}
+True if print to stdout is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__logging_ga440aed412e51e0bd9ec443d20674c933}\label{group__logging_ga440aed412e51e0bd9ec443d20674c933}} 
+\index{Logging API@{Logging API}!CR\_printProgressBar@{CR\_printProgressBar}}
+\index{CR\_printProgressBar@{CR\_printProgressBar}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_printProgressBar()}{CR\_printProgressBar()}}
+{\footnotesize\ttfamily void C\+R\+\_\+print\+Progress\+Bar (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables of progress bar to stdout. If disabled, the progress percentage can be polled using \mbox{\hyperlink{group__logging_ga318f09c257482854b663b8eac7f87fb9}{C\+R\+\_\+get\+Progress\+Percentage}}. Note that stdout printing must be enabled (see \mbox{\hyperlink{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}{C\+R\+\_\+print\+Tostdout}}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable writing the rendering progress to stdout. (Default\+: true). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}\label{group__logging_gaf66aec2100a2c69ce6dc6e045b800771}} 
+\index{Logging API@{Logging API}!CR\_printTostdout@{CR\_printTostdout}}
+\index{CR\_printTostdout@{CR\_printTostdout}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_printTostdout()}{CR\_printTostdout()}}
+{\footnotesize\ttfamily void C\+R\+\_\+print\+Tostdout (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables writing internal log messages. If disabled, the messages can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable writing to stdout. (Default\+: true). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__logging_ga8e0f026f61b2c9059039beecf8397302}\label{group__logging_ga8e0f026f61b2c9059039beecf8397302}} 
+\index{Logging API@{Logging API}!CR\_setLogFile@{CR\_setLogFile}}
+\index{CR\_setLogFile@{CR\_setLogFile}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_setLogFile()}{CR\_setLogFile()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Log\+File (\begin{DoxyParamCaption}\item[{void $\ast$}]{file }\end{DoxyParamCaption})}
+
+
+
+Enables writing to an output F\+I\+LE. If disabled, the messages are written to a queue and can be polled using \mbox{\hyperlink{group__logging_ga3b3825f8bd0367dadbc1854c54d949c2}{C\+R\+\_\+get\+Last\+Log\+Message}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & A valid F\+I\+LE pointer. (Default\+: N\+U\+LL). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__logging_ga0cafce367001619449bc2c18353daaa5}\label{group__logging_ga0cafce367001619449bc2c18353daaa5}} 
+\index{Logging API@{Logging API}!CR\_setMinimumLogLevel@{CR\_setMinimumLogLevel}}
+\index{CR\_setMinimumLogLevel@{CR\_setMinimumLogLevel}!Logging API@{Logging API}}
+\doxysubsubsection{\texorpdfstring{CR\_setMinimumLogLevel()}{CR\_setMinimumLogLevel()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Minimum\+Log\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_ga496bc91ad0750fff7d085d36890f5793}{C\+R\+A\+Y\+\_\+\+L\+O\+G\+G\+E\+R\+E\+N\+T\+RY}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Sets the minimum log level to store messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The logger type. (Default\+: Error. Only error messages are logged). \\
+\hline
+\end{DoxyParams}

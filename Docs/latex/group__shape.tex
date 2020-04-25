@@ -1,0 +1,299 @@
+\hypertarget{group__shape}{}\doxysection{Shape A\+PI}
+\label{group__shape}\index{Shape API@{Shape API}}
+
+
+Functions for the generation of shapes. Both parametric and polygon group shapes are supported.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__shape_ga47d935396f21f24c6758960fa16b2ce5}{C\+R\+\_\+reserve\+Primitives}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reserves memory for the requested number of primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga9a188f199b441eb1ff16aad955a5768b}{C\+R\+\_\+reserve\+Materials}} (size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reserves memory for the requested number of materials. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__shape_ga06dca798097fa769ff69ee755eaeb70f}{C\+R\+\_\+get\+Num\+Primitives}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current number of primitives. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{group__shape_ga3ec8fb803ab19c30ab7efd4d2f5458b5}{C\+R\+\_\+get\+Num\+Materials}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the current number of materials. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga4aeb49585d7dde4e7fa4efbeab9297a5}{C\+R\+\_\+add\+Primitive\+Sphere}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} radius, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates a sphere primitive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga1e9643524bae02cd0caa16ce27f427d3}{C\+R\+\_\+add\+Primitive\+Rectangle\+XZ}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the XZ axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga561a79a6514dcd38c911b7e451960e58}{C\+R\+\_\+add\+Primitive\+Rectangle\+XY}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+x, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the XY axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga9e45429199e285f45b4d11d521af624f}{C\+R\+\_\+add\+Primitive\+Rectangle\+YZ}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+y, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} min\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+\_\+z, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} offset, bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an axis-\/aligned rectangle primitive on the YZ axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__shape_ga0ab3ec8545c82454068886330a5dd677}{C\+R\+\_\+add\+Primitive\+Triangle}} (bool flip\+\_\+normals, bool double\+\_\+sided, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Creates an empty triangle primitive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga62d284caf60fb186b7e0eab906ca3d25}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Positions}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position)
+\begin{DoxyCompactList}\small\item\em Associates a group of vertices with an existing triangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga54a75424f9b33eb51c744b9626d02bf8}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Normals}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} normal)
+\begin{DoxyCompactList}\small\item\em Associates a group of normals with an existing triangle. If these are not provided, triangle plane normals are used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__shape_ga4660a70437e405ba886f347b24328529}{C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Texcoords}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} triangle\+\_\+id, int32\+\_\+t index, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} texcoord)
+\begin{DoxyCompactList}\small\item\em Associates a group of texcoord with an existing triangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for the generation of shapes. Both parametric and polygon group shapes are supported. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__shape_ga561a79a6514dcd38c911b7e451960e58}\label{group__shape_ga561a79a6514dcd38c911b7e451960e58}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveRectangleXY@{CR\_addPrimitiveRectangleXY}}
+\index{CR\_addPrimitiveRectangleXY@{CR\_addPrimitiveRectangleXY}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveRectangleXY()}{CR\_addPrimitiveRectangleXY()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Primitive\+Rectangle\+XY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+x,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+x,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+y,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+y,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{offset,  }\item[{bool}]{flip\+\_\+normals,  }\item[{bool}]{double\+\_\+sided,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Creates an axis-\/aligned rectangle primitive on the XY axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+x} & The minimum value in the X axis of the rectangle. \\
+\hline
+{\em max\+\_\+x} & The maximum value in the X axis of the rectangle. \\
+\hline
+{\em min\+\_\+y} & The minimum value in the Y axis of the rectangle. \\
+\hline
+{\em max\+\_\+y} & The maximum value in the Y axis of the rectangle. \\
+\hline
+{\em offset} & The offset of the rectangle in the Z axis. \\
+\hline
+{\em flip\+\_\+normals} & A flag that dictates if the primitive\textquotesingle{}s normals are flipped. \\
+\hline
+{\em double\+\_\+sided} & A flag that dictates if the primitive is double sided. \\
+\hline
+{\em material\+\_\+id} & The material id that will be used by the primitive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the primitive to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga1e9643524bae02cd0caa16ce27f427d3}\label{group__shape_ga1e9643524bae02cd0caa16ce27f427d3}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveRectangleXZ@{CR\_addPrimitiveRectangleXZ}}
+\index{CR\_addPrimitiveRectangleXZ@{CR\_addPrimitiveRectangleXZ}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveRectangleXZ()}{CR\_addPrimitiveRectangleXZ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Primitive\+Rectangle\+XZ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+x,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+x,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+z,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+z,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{offset,  }\item[{bool}]{flip\+\_\+normals,  }\item[{bool}]{double\+\_\+sided,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Creates an axis-\/aligned rectangle primitive on the XZ axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+x} & The minimum value in the X axis of the rectangle. \\
+\hline
+{\em max\+\_\+x} & The maximum value in the X axis of the rectangle. \\
+\hline
+{\em min\+\_\+z} & The minimum value in the Z axis of the rectangle. \\
+\hline
+{\em max\+\_\+z} & The maximum value in the Z axis of the rectangle. \\
+\hline
+{\em offset} & The offset of the rectangle in the Y axis. \\
+\hline
+{\em flip\+\_\+normals} & A flag that dictates if the primitive\textquotesingle{}s normals are flipped. \\
+\hline
+{\em double\+\_\+sided} & A flag that dictates if the primitive is double sided. \\
+\hline
+{\em material\+\_\+id} & The material id that will be used by the primitive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the primitive to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga9e45429199e285f45b4d11d521af624f}\label{group__shape_ga9e45429199e285f45b4d11d521af624f}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveRectangleYZ@{CR\_addPrimitiveRectangleYZ}}
+\index{CR\_addPrimitiveRectangleYZ@{CR\_addPrimitiveRectangleYZ}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveRectangleYZ()}{CR\_addPrimitiveRectangleYZ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Primitive\+Rectangle\+YZ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+y,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+y,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{min\+\_\+z,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+\_\+z,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{offset,  }\item[{bool}]{flip\+\_\+normals,  }\item[{bool}]{double\+\_\+sided,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Creates an axis-\/aligned rectangle primitive on the YZ axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+y} & The minimum value in the Y axis of the rectangle. \\
+\hline
+{\em max\+\_\+y} & The maximum value in the Y axis of the rectangle. \\
+\hline
+{\em min\+\_\+z} & The minimum value in the Z axis of the rectangle. \\
+\hline
+{\em max\+\_\+z} & The maximum value in the Z axis of the rectangle. \\
+\hline
+{\em offset} & The offset of the rectangle in the X axis. \\
+\hline
+{\em flip\+\_\+normals} & A flag that dictates if the primitive\textquotesingle{}s normals are flipped. \\
+\hline
+{\em double\+\_\+sided} & A flag that dictates if the primitive is double sided. \\
+\hline
+{\em material\+\_\+id} & The material id that will be used by the primitive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the primitive to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga4aeb49585d7dde4e7fa4efbeab9297a5}\label{group__shape_ga4aeb49585d7dde4e7fa4efbeab9297a5}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveSphere@{CR\_addPrimitiveSphere}}
+\index{CR\_addPrimitiveSphere@{CR\_addPrimitiveSphere}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveSphere()}{CR\_addPrimitiveSphere()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Primitive\+Sphere (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{radius,  }\item[{bool}]{flip\+\_\+normals,  }\item[{bool}]{double\+\_\+sided,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Creates a sphere primitive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The center of the sphere in world units. \\
+\hline
+{\em radius} & The radius of the sphere in world units. \\
+\hline
+{\em flip\+\_\+normals} & A flag that dictates if the primitive\textquotesingle{}s normals are flipped. \\
+\hline
+{\em double\+\_\+sided} & A flag that dictates if the primitive is double sided. \\
+\hline
+{\em material\+\_\+id} & The material id that will be used by the primitive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the primitive to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga0ab3ec8545c82454068886330a5dd677}\label{group__shape_ga0ab3ec8545c82454068886330a5dd677}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveTriangle@{CR\_addPrimitiveTriangle}}
+\index{CR\_addPrimitiveTriangle@{CR\_addPrimitiveTriangle}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveTriangle()}{CR\_addPrimitiveTriangle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Primitive\+Triangle (\begin{DoxyParamCaption}\item[{bool}]{flip\+\_\+normals,  }\item[{bool}]{double\+\_\+sided,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Creates an empty triangle primitive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flip\+\_\+normals} & A flag that dictates if the primitive\textquotesingle{}s normals are flipped. \\
+\hline
+{\em double\+\_\+sided} & A flag that dictates if the primitive is double sided. \\
+\hline
+{\em material\+\_\+id} & The material id that will be used by the primitive. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the primitive to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga54a75424f9b33eb51c744b9626d02bf8}\label{group__shape_ga54a75424f9b33eb51c744b9626d02bf8}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveTriangleVertexNormals@{CR\_addPrimitiveTriangleVertexNormals}}
+\index{CR\_addPrimitiveTriangleVertexNormals@{CR\_addPrimitiveTriangleVertexNormals}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveTriangleVertexNormals()}{CR\_addPrimitiveTriangleVertexNormals()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Normals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{triangle\+\_\+id,  }\item[{int32\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{normal }\end{DoxyParamCaption})}
+
+
+
+Associates a group of normals with an existing triangle. If these are not provided, triangle plane normals are used. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle\+\_\+id} & The triangle id that the vertices belong to. \\
+\hline
+{\em index} & The vertex index of the triangle. \\
+\hline
+{\em normal} & The vertex normals. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__shape_ga62d284caf60fb186b7e0eab906ca3d25}\label{group__shape_ga62d284caf60fb186b7e0eab906ca3d25}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveTriangleVertexPositions@{CR\_addPrimitiveTriangleVertexPositions}}
+\index{CR\_addPrimitiveTriangleVertexPositions@{CR\_addPrimitiveTriangleVertexPositions}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveTriangleVertexPositions()}{CR\_addPrimitiveTriangleVertexPositions()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Positions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{triangle\+\_\+id,  }\item[{int32\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position }\end{DoxyParamCaption})}
+
+
+
+Associates a group of vertices with an existing triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle\+\_\+id} & The triangle id that the vertices belong to. \\
+\hline
+{\em index} & The vertex index of the triangle. \\
+\hline
+{\em position} & The vertex position in world units. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__shape_ga4660a70437e405ba886f347b24328529}\label{group__shape_ga4660a70437e405ba886f347b24328529}} 
+\index{Shape API@{Shape API}!CR\_addPrimitiveTriangleVertexTexcoords@{CR\_addPrimitiveTriangleVertexTexcoords}}
+\index{CR\_addPrimitiveTriangleVertexTexcoords@{CR\_addPrimitiveTriangleVertexTexcoords}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_addPrimitiveTriangleVertexTexcoords()}{CR\_addPrimitiveTriangleVertexTexcoords()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Primitive\+Triangle\+Vertex\+Texcoords (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{triangle\+\_\+id,  }\item[{int32\+\_\+t}]{index,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{texcoord }\end{DoxyParamCaption})}
+
+
+
+Associates a group of texcoord with an existing triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle\+\_\+id} & The triangle id that the vertices belong to. \\
+\hline
+{\em index} & The vertex index of the triangle. \\
+\hline
+{\em texcoord} & The vertex texcoords. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__shape_ga3ec8fb803ab19c30ab7efd4d2f5458b5}\label{group__shape_ga3ec8fb803ab19c30ab7efd4d2f5458b5}} 
+\index{Shape API@{Shape API}!CR\_getNumMaterials@{CR\_getNumMaterials}}
+\index{CR\_getNumMaterials@{CR\_getNumMaterials}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_getNumMaterials()}{CR\_getNumMaterials()}}
+{\footnotesize\ttfamily size\+\_\+t C\+R\+\_\+get\+Num\+Materials (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the current number of materials. 
+
+\begin{DoxyReturn}{Returns}
+The number of materials. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga06dca798097fa769ff69ee755eaeb70f}\label{group__shape_ga06dca798097fa769ff69ee755eaeb70f}} 
+\index{Shape API@{Shape API}!CR\_getNumPrimitives@{CR\_getNumPrimitives}}
+\index{CR\_getNumPrimitives@{CR\_getNumPrimitives}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_getNumPrimitives()}{CR\_getNumPrimitives()}}
+{\footnotesize\ttfamily size\+\_\+t C\+R\+\_\+get\+Num\+Primitives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the current number of primitives. 
+
+\begin{DoxyReturn}{Returns}
+The number of primitives. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__shape_ga9a188f199b441eb1ff16aad955a5768b}\label{group__shape_ga9a188f199b441eb1ff16aad955a5768b}} 
+\index{Shape API@{Shape API}!CR\_reserveMaterials@{CR\_reserveMaterials}}
+\index{CR\_reserveMaterials@{CR\_reserveMaterials}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_reserveMaterials()}{CR\_reserveMaterials()}}
+{\footnotesize\ttfamily void C\+R\+\_\+reserve\+Materials (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Reserves memory for the requested number of materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of materials. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__shape_ga47d935396f21f24c6758960fa16b2ce5}\label{group__shape_ga47d935396f21f24c6758960fa16b2ce5}} 
+\index{Shape API@{Shape API}!CR\_reservePrimitives@{CR\_reservePrimitives}}
+\index{CR\_reservePrimitives@{CR\_reservePrimitives}!Shape API@{Shape API}}
+\doxysubsubsection{\texorpdfstring{CR\_reservePrimitives()}{CR\_reservePrimitives()}}
+{\footnotesize\ttfamily void C\+R\+\_\+reserve\+Primitives (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Reserves memory for the requested number of primitives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The number of primitives. \\
+\hline
+\end{DoxyParams}

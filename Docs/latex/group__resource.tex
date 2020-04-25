@@ -1,0 +1,108 @@
+\hypertarget{group__resource}{}\doxysection{Generic Resource Handling A\+PI}
+\label{group__resource}\index{Generic Resource Handling API@{Generic Resource Handling API}}
+
+
+Base engine functions for rendering operations and general resource handling.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__resource_gaaeffaef6f8257ee193922d4b1aef02f5}{C\+R\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the rendering engine. This must be the first function call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga0f8adb5588e3a2fe9b2cbdb0b9fbd1d8}{C\+R\+\_\+destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys any internal allocations. This is only necessary if multiple rendering operations are to be performed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}{C\+R\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the rendering operation\+: performs scene preprocessing, initializes threads and starts rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga96d06ba918def088db9bbba50e315e42}{C\+R\+\_\+stop}} ()
+\begin{DoxyCompactList}\small\item\em Issues a request to stop any running rendering operations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__resource_ga11c06977090d2de8bec36d6e62e1ef64}{C\+R\+\_\+clear\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Clears any internal scene data, e.\+g. cameras, acceleration structures, lights, materials, etc. This is needed only if a subsequent rendering operation is to be performed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__resource_ga23dc42e6ddb480671e8017131c3b2588}{C\+R\+\_\+started}} ()
+\begin{DoxyCompactList}\small\item\em Queries the renderer if a start command has been issued. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__resource_ga8970ba439c0e1eabda6fc79a3cb9f315}{C\+R\+\_\+finished}} ()
+\begin{DoxyCompactList}\small\item\em Queries the renderer if rendering has finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base engine functions for rendering operations and general resource handling. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__resource_ga11c06977090d2de8bec36d6e62e1ef64}\label{group__resource_ga11c06977090d2de8bec36d6e62e1ef64}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_clearScene@{CR\_clearScene}}
+\index{CR\_clearScene@{CR\_clearScene}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_clearScene()}{CR\_clearScene()}}
+{\footnotesize\ttfamily void C\+R\+\_\+clear\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears any internal scene data, e.\+g. cameras, acceleration structures, lights, materials, etc. This is needed only if a subsequent rendering operation is to be performed. 
+
+\mbox{\Hypertarget{group__resource_ga0f8adb5588e3a2fe9b2cbdb0b9fbd1d8}\label{group__resource_ga0f8adb5588e3a2fe9b2cbdb0b9fbd1d8}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_destroy@{CR\_destroy}}
+\index{CR\_destroy@{CR\_destroy}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_destroy()}{CR\_destroy()}}
+{\footnotesize\ttfamily void C\+R\+\_\+destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys any internal allocations. This is only necessary if multiple rendering operations are to be performed. 
+
+\mbox{\Hypertarget{group__resource_ga8970ba439c0e1eabda6fc79a3cb9f315}\label{group__resource_ga8970ba439c0e1eabda6fc79a3cb9f315}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_finished@{CR\_finished}}
+\index{CR\_finished@{CR\_finished}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_finished()}{CR\_finished()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Queries the renderer if rendering has finished. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the renderer has finished, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__resource_gaaeffaef6f8257ee193922d4b1aef02f5}\label{group__resource_gaaeffaef6f8257ee193922d4b1aef02f5}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_init@{CR\_init}}
+\index{CR\_init@{CR\_init}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_init()}{CR\_init()}}
+{\footnotesize\ttfamily void C\+R\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the rendering engine. This must be the first function call. 
+
+\mbox{\Hypertarget{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}\label{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_start@{CR\_start}}
+\index{CR\_start@{CR\_start}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_start()}{CR\_start()}}
+{\footnotesize\ttfamily void C\+R\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the rendering operation\+: performs scene preprocessing, initializes threads and starts rendering. 
+
+\mbox{\Hypertarget{group__resource_ga23dc42e6ddb480671e8017131c3b2588}\label{group__resource_ga23dc42e6ddb480671e8017131c3b2588}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_started@{CR\_started}}
+\index{CR\_started@{CR\_started}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_started()}{CR\_started()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+started (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Queries the renderer if a start command has been issued. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the renderer is doing work, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__resource_ga96d06ba918def088db9bbba50e315e42}\label{group__resource_ga96d06ba918def088db9bbba50e315e42}} 
+\index{Generic Resource Handling API@{Generic Resource Handling API}!CR\_stop@{CR\_stop}}
+\index{CR\_stop@{CR\_stop}!Generic Resource Handling API@{Generic Resource Handling API}}
+\doxysubsubsection{\texorpdfstring{CR\_stop()}{CR\_stop()}}
+{\footnotesize\ttfamily void C\+R\+\_\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Issues a request to stop any running rendering operations. 
+

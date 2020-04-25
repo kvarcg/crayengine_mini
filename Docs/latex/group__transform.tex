@@ -1,0 +1,131 @@
+\hypertarget{group__transform}{}\doxysection{Transformation A\+PI}
+\label{group__transform}\index{Transformation API@{Transformation API}}
+
+
+Functions for hierarchical basic affine transformations.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__transform_ga9d53ef80f93c86b6b767173eb1d08d29}{C\+R\+\_\+push\+Matrix}} (\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix)
+\begin{DoxyCompactList}\small\item\em Pushes a transformation matrix onto the stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__transform_ga1c9b9d14279856a5d3c8fac23b6774fe}{C\+R\+\_\+pop\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Pops a transformation matrix from the stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_gad77f200fdb04a33759b38a7f8ea08afb}{C\+R\+\_\+rotate}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} degrees, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} axis)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a rotation matrix along an arbitrary axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga55793b7179a570952ba9f54715ecaa42}{C\+R\+\_\+translate}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} translate)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a translation matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga7271b59c702db444aa7950d8717a9bcc}{C\+R\+\_\+scale}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} scale)
+\begin{DoxyCompactList}\small\item\em Utility function to generate a scale matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} \mbox{\hyperlink{group__transform_ga98bc702f6e9a68833d41197054c0789b}{C\+R\+\_\+mul\+Matrix}} (\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix1, \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} matrix2)
+\begin{DoxyCompactList}\small\item\em Utility function to multiply two matrices, M = M1 $\ast$ M2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for hierarchical basic affine transformations. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__transform_ga98bc702f6e9a68833d41197054c0789b}\label{group__transform_ga98bc702f6e9a68833d41197054c0789b}} 
+\index{Transformation API@{Transformation API}!CR\_mulMatrix@{CR\_mulMatrix}}
+\index{CR\_mulMatrix@{CR\_mulMatrix}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_mulMatrix()}{CR\_mulMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} C\+R\+\_\+mul\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}}]{matrix1,  }\item[{\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}}]{matrix2 }\end{DoxyParamCaption})}
+
+
+
+Utility function to multiply two matrices, M = M1 $\ast$ M2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix1} & The first matrix. \\
+\hline
+{\em matrix2} & The second matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__transform_ga1c9b9d14279856a5d3c8fac23b6774fe}\label{group__transform_ga1c9b9d14279856a5d3c8fac23b6774fe}} 
+\index{Transformation API@{Transformation API}!CR\_popMatrix@{CR\_popMatrix}}
+\index{CR\_popMatrix@{CR\_popMatrix}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_popMatrix()}{CR\_popMatrix()}}
+{\footnotesize\ttfamily void C\+R\+\_\+pop\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Pops a transformation matrix from the stack. 
+
+\mbox{\Hypertarget{group__transform_ga9d53ef80f93c86b6b767173eb1d08d29}\label{group__transform_ga9d53ef80f93c86b6b767173eb1d08d29}} 
+\index{Transformation API@{Transformation API}!CR\_pushMatrix@{CR\_pushMatrix}}
+\index{CR\_pushMatrix@{CR\_pushMatrix}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_pushMatrix()}{CR\_pushMatrix()}}
+{\footnotesize\ttfamily void C\+R\+\_\+push\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}}}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Pushes a transformation matrix onto the stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The matrix to push. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__transform_gad77f200fdb04a33759b38a7f8ea08afb}\label{group__transform_gad77f200fdb04a33759b38a7f8ea08afb}} 
+\index{Transformation API@{Transformation API}!CR\_rotate@{CR\_rotate}}
+\index{CR\_rotate@{CR\_rotate}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_rotate()}{CR\_rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} C\+R\+\_\+rotate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{degrees,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{axis }\end{DoxyParamCaption})}
+
+
+
+Utility function to generate a rotation matrix along an arbitrary axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & The angle of rotation, in degrees. \\
+\hline
+{\em axis} & The axis of rotation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__transform_ga7271b59c702db444aa7950d8717a9bcc}\label{group__transform_ga7271b59c702db444aa7950d8717a9bcc}} 
+\index{Transformation API@{Transformation API}!CR\_scale@{CR\_scale}}
+\index{CR\_scale@{CR\_scale}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_scale()}{CR\_scale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} C\+R\+\_\+scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{scale }\end{DoxyParamCaption})}
+
+
+
+Utility function to generate a scale matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__transform_ga55793b7179a570952ba9f54715ecaa42}\label{group__transform_ga55793b7179a570952ba9f54715ecaa42}} 
+\index{Transformation API@{Transformation API}!CR\_translate@{CR\_translate}}
+\index{CR\_translate@{CR\_translate}!Transformation API@{Transformation API}}
+\doxysubsubsection{\texorpdfstring{CR\_translate()}{CR\_translate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcr__mat4}{cr\+\_\+mat4}} C\+R\+\_\+translate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{translate }\end{DoxyParamCaption})}
+
+
+
+Utility function to generate a translation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translate} & The translation vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new matrix 
+\end{DoxyReturn}

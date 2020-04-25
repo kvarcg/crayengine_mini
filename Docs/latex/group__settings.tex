@@ -1,0 +1,659 @@
+\hypertarget{group__settings}{}\doxysection{General Settings A\+PI}
+\label{group__settings}\index{General Settings API@{General Settings API}}
+
+
+General functions setting/retrieves internal engine state.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__settings_ga23796051d4a0926eb7c869f02ae2bfee}{C\+R\+\_\+enable\+R\+G\+B\+Buffer}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables the use of an R\+GB buffer. By default, all results are written to a floating buffer, for increased precision. When an R\+GB buffer is enabled, the main writing is still performed on the floating buffer. The R\+GB buffer simply contains the converted 8-\/bit values after tonemapping and gamma correction. This is useful mainly for G\+UI operations, in order to avoid performing a whole conversion later on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga1da2648f72e031b1847466182d40a7e8}{C\+R\+\_\+set\+Output\+Name}} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Sets an output name for writing. This is just a utility function, e.\+g. for scene loaders, as the engine does not perform any file operations. The name does not contain any extension. It is the responsibility of the caller to retrieve the final framebuffer and write to whichever file format is desired (or do anything with it). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga6d76363dc639deb0f6d8a316d58b23d1}{C\+R\+\_\+set\+Film\+Dimensions}} (int32\+\_\+t width, int32\+\_\+t height)
+\begin{DoxyCompactList}\small\item\em Sets the image dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga9518ba313bd84729c2414863e54b5d6f}{C\+R\+\_\+set\+Num\+Threads}} (int32\+\_\+t num\+\_\+threads)
+\begin{DoxyCompactList}\small\item\em Sets the number of threads to use for rendering. Ideally, this should be the number of cores in the system. The actual number of threads spawn is num\+\_\+threads -\/ 1 unless the use\+\_\+main\+\_\+thread flag is set to false. A value of 0 issues a serial operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga77c844ccdf749c46339d79d5613dec3a}{C\+R\+\_\+use\+Main\+Thread}} (bool use\+\_\+main\+\_\+thread)
+\begin{DoxyCompactList}\small\item\em Enables/disables the use of the main thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga20ef3b1c09e4424b0e7eb0c454233253}{C\+R\+\_\+set\+Block\+Size}} (int32\+\_\+t block\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Sets the number of pixels per 2D tile to use for multithreaded rendering. A value of 16 or 32 is a typical use case. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaefb25f52505bdf55f780f68a0da18ebd}{C\+R\+\_\+set\+Samples\+Per\+Pixel}} (int32\+\_\+t spp)
+\begin{DoxyCompactList}\small\item\em Sets the number of ray samples per pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}{C\+R\+\_\+set\+Gamma}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} gamma)
+\begin{DoxyCompactList}\small\item\em Sets the gamma correction value. This is used only when an R\+GB buffer is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga170fbbb3c14ba75fb087a6bc4ca91da0}{C\+R\+\_\+set\+Exposure}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} exposure)
+\begin{DoxyCompactList}\small\item\em Sets the exposure value to be used during the tonemapping operation. Internally, the traditional John Hable\textquotesingle{}s Uncharted 2 tonemapping operator is used. This is used only when an R\+GB buffer is enabled. Using an exposure value of 0.\+0 degrades to no tonemapping. This process is then followed by gamma correction (see \mbox{\hyperlink{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}{C\+R\+\_\+set\+Gamma}}) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gad11b2e9b5851759a4e34179cb7f55c37}{C\+R\+\_\+set\+Acceleration\+Structure}} (\mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} acceleration\+\_\+structure\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Sets the acceleration structure. Simple scenes can use a simple array structure. For anything else, a B\+VH is the optimal option. Any subsequent calls to this function, overrides A\+ND D\+E\+L\+E\+T\+ES any previously allocated acceleration structure and internal data, e.\+g. primitives. This function should be called before adding any primitives. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga61091e36fd9171a66786b16d17dc6fb4}{C\+R\+\_\+set\+Integrator}} (\mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} integrator\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Adds an integrator. Currently, Ambient Occlusion and unidirectional Path Tracing are available. A scene can be rendered multiple times with different integrators, by simply issuing calls to this function and \mbox{\hyperlink{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}{C\+R\+\_\+start}}, i.\+e. no reloading of the scene data is required. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_ga3328876cc8e901c883639c040108a185}{C\+R\+\_\+set\+Interactive\+Render}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables interactive rendering. This is useful only for integrations with a G\+UI. Enabling interactive rendering maintains all current settings with the following differences\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaf75447dc5ba8a2c019ee266553570816}{C\+R\+\_\+use\+Fast\+R\+NG}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enforces the use of Xorshift R\+NG. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gac2324b97399c14d0f5ced0bc7f8a0a7d}{C\+R\+\_\+is\+R\+G\+B\+Buffer\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if R\+GB buffer is enabled. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{group__settings_gaf6d798017bc620a021c77e02034a7c6f}{C\+R\+\_\+get\+Output\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the output name. \end{DoxyCompactList}\item 
+float $\ast$ \mbox{\hyperlink{group__settings_ga7848b69dc37042af784a76f8fd661510}{C\+R\+\_\+get\+Film\+Float\+Data\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a pointer to the internal float framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{group__settings_gafc259e6d34f1a8d075e1e71497c1e46d}{C\+R\+\_\+get\+Film\+Float\+Byte\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of bytes for the float buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__settings_ga7e35a131afd542a9896d2af3c49dbfc0}{C\+R\+\_\+get\+Film\+R\+G\+B\+Data\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a pointer to the internal R\+GB framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{group__settings_gabee84878b6cdd7cef77a12f96e1558d8}{C\+R\+\_\+get\+Film\+R\+G\+B\+Byte\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of bytes for the R\+GB buffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga68b8fe06db4a26752ca802c6cf02b809}{C\+R\+\_\+get\+Film\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Gets the width of the internal framebuffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gadb2de3bd8d8e791b70e868c6dd941d4c}{C\+R\+\_\+get\+Film\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Gets the height of the internal framebuffer. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga0f258b771216e16077ae0fe5cc37b22c}{C\+R\+\_\+get\+Film\+Channels}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of channels of the internal framebuffer. This is currently fixed to 3. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga69e61b0e79dcb4303b05c51c00ef499b}{C\+R\+\_\+get\+Num\+Threads}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of threads. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gad65bb7658f007b4538b3fd4ddb2dba4e}{C\+R\+\_\+uses\+Main\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Check if main thread rendering is enabled. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaae19b68067720f5ff4a80622b4c4e547}{C\+R\+\_\+get\+Block\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of pixels per 2D tile. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_ga9a13d5fc8019d2158f84dbfa4e9394bc}{C\+R\+\_\+get\+Samples\+Per\+Pixel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of ray samples per pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga5477d2dcdb235681384b0bc718e90628}{C\+R\+\_\+get\+Gamma}} ()
+\begin{DoxyCompactList}\small\item\em Gets the gamma correction value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga861c0cedef13ed86ec40daefd5e1bb49}{C\+R\+\_\+get\+Exposure}} ()
+\begin{DoxyCompactList}\small\item\em Gets the exposure value used during the tonemapping operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} \mbox{\hyperlink{group__settings_ga2afabcad71f77f74590d55a3481630a4}{C\+R\+\_\+get\+Acceleration\+Structure}} ()
+\begin{DoxyCompactList}\small\item\em Gets the acceleration structure type used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} \mbox{\hyperlink{group__settings_ga34cc951841f01b317bce965785226b65}{C\+R\+\_\+get\+Integrator}} ()
+\begin{DoxyCompactList}\small\item\em Gets the integrator type used. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_ga0e84507872056bb89f4fc8e163d59f12}{C\+R\+\_\+is\+Interactive\+Rende\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if interactive rendering is enabled. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gaeca97415fb43ff95736c1344b348da70}{C\+R\+\_\+is\+Fast\+R\+N\+G\+Enabled}} ()
+\begin{DoxyCompactList}\small\item\em Check if Fast R\+NG is enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaacbfebbca3a175c783e63d733a4777c9}{C\+R\+\_\+set\+A\+O\+Samples\+Per\+Pixel}} (int32\+\_\+t spp)
+\begin{DoxyCompactList}\small\item\em Sets the number of AO rays to spawn for each sample per pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga670005d369909234b2e5ea4f2fb7af30}{C\+R\+\_\+set\+A\+O\+Range}} (\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} range)
+\begin{DoxyCompactList}\small\item\em Sets the AO range of the rays. A value of 0 denotes infinite range. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaf6ed49c394a66f76fd56bfcecba63999}{C\+R\+\_\+get\+A\+O\+Samples\+Per\+Pixel}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of AO rays spawned for each sample per pixel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} \mbox{\hyperlink{group__settings_ga2ed48590a606f509d9c610494ad7434c}{C\+R\+\_\+get\+A\+O\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Gets the AO range of the rays. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}{C\+R\+\_\+set\+Ray\+Depth}} (int32\+\_\+t depth)
+\begin{DoxyCompactList}\small\item\em Sets the maximum depth of the rays for the path tracer. 1 is direct lighting, 2 is 1 indirect bounce, etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__settings_ga86fdf97fa0548a0b2a41b6adb45f39f8}{C\+R\+\_\+set\+Russian\+Roulette}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables/disables russian roulette for path tracing. This function is also capped by the \mbox{\hyperlink{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}{C\+R\+\_\+set\+Ray\+Depth}}. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group__settings_gaf917cd720d2de5763c71ae1b6b67f607}{C\+R\+\_\+get\+Ray\+Depth}} ()
+\begin{DoxyCompactList}\small\item\em Gets the maximum depth of the rays for the path tracer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__settings_gadc63706b08947ee9030bf8705edd3552}{C\+R\+\_\+get\+Russian\+Roulette}} ()
+\begin{DoxyCompactList}\small\item\em Gets the russian roulette status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General functions setting/retrieves internal engine state. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__settings_ga23796051d4a0926eb7c869f02ae2bfee}\label{group__settings_ga23796051d4a0926eb7c869f02ae2bfee}} 
+\index{General Settings API@{General Settings API}!CR\_enableRGBBuffer@{CR\_enableRGBBuffer}}
+\index{CR\_enableRGBBuffer@{CR\_enableRGBBuffer}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_enableRGBBuffer()}{CR\_enableRGBBuffer()}}
+{\footnotesize\ttfamily void C\+R\+\_\+enable\+R\+G\+B\+Buffer (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables/disables the use of an R\+GB buffer. By default, all results are written to a floating buffer, for increased precision. When an R\+GB buffer is enabled, the main writing is still performed on the floating buffer. The R\+GB buffer simply contains the converted 8-\/bit values after tonemapping and gamma correction. This is useful mainly for G\+UI operations, in order to avoid performing a whole conversion later on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable the R\+GB buffer (Default\+: false). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga2afabcad71f77f74590d55a3481630a4}\label{group__settings_ga2afabcad71f77f74590d55a3481630a4}} 
+\index{General Settings API@{General Settings API}!CR\_getAccelerationStructure@{CR\_getAccelerationStructure}}
+\index{CR\_getAccelerationStructure@{CR\_getAccelerationStructure}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getAccelerationStructure()}{CR\_getAccelerationStructure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}} C\+R\+\_\+get\+Acceleration\+Structure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the acceleration structure type used. 
+
+\begin{DoxyReturn}{Returns}
+The acceleration structure type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga2ed48590a606f509d9c610494ad7434c}\label{group__settings_ga2ed48590a606f509d9c610494ad7434c}} 
+\index{General Settings API@{General Settings API}!CR\_getAORange@{CR\_getAORange}}
+\index{CR\_getAORange@{CR\_getAORange}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getAORange()}{CR\_getAORange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} C\+R\+\_\+get\+A\+O\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the AO range of the rays. 
+
+\begin{DoxyReturn}{Returns}
+The AO range. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gaf6ed49c394a66f76fd56bfcecba63999}\label{group__settings_gaf6ed49c394a66f76fd56bfcecba63999}} 
+\index{General Settings API@{General Settings API}!CR\_getAOSamplesPerPixel@{CR\_getAOSamplesPerPixel}}
+\index{CR\_getAOSamplesPerPixel@{CR\_getAOSamplesPerPixel}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getAOSamplesPerPixel()}{CR\_getAOSamplesPerPixel()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+A\+O\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of AO rays spawned for each sample per pixel. 
+
+\begin{DoxyReturn}{Returns}
+The AO rays per spp. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gaae19b68067720f5ff4a80622b4c4e547}\label{group__settings_gaae19b68067720f5ff4a80622b4c4e547}} 
+\index{General Settings API@{General Settings API}!CR\_getBlockSize@{CR\_getBlockSize}}
+\index{CR\_getBlockSize@{CR\_getBlockSize}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getBlockSize()}{CR\_getBlockSize()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Block\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of pixels per 2D tile. 
+
+\begin{DoxyReturn}{Returns}
+The number of pixels per 2D tile. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga861c0cedef13ed86ec40daefd5e1bb49}\label{group__settings_ga861c0cedef13ed86ec40daefd5e1bb49}} 
+\index{General Settings API@{General Settings API}!CR\_getExposure@{CR\_getExposure}}
+\index{CR\_getExposure@{CR\_getExposure}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getExposure()}{CR\_getExposure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} C\+R\+\_\+get\+Exposure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the exposure value used during the tonemapping operation. 
+
+\mbox{\Hypertarget{group__settings_ga0f258b771216e16077ae0fe5cc37b22c}\label{group__settings_ga0f258b771216e16077ae0fe5cc37b22c}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmChannels@{CR\_getFilmChannels}}
+\index{CR\_getFilmChannels@{CR\_getFilmChannels}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmChannels()}{CR\_getFilmChannels()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Film\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of channels of the internal framebuffer. This is currently fixed to 3. 
+
+\begin{DoxyReturn}{Returns}
+The number of channels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gafc259e6d34f1a8d075e1e71497c1e46d}\label{group__settings_gafc259e6d34f1a8d075e1e71497c1e46d}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmFloatByteSize@{CR\_getFilmFloatByteSize}}
+\index{CR\_getFilmFloatByteSize@{CR\_getFilmFloatByteSize}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmFloatByteSize()}{CR\_getFilmFloatByteSize()}}
+{\footnotesize\ttfamily uint64\+\_\+t C\+R\+\_\+get\+Film\+Float\+Byte\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of bytes for the float buffer. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga7848b69dc37042af784a76f8fd661510}\label{group__settings_ga7848b69dc37042af784a76f8fd661510}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmFloatDataPtr@{CR\_getFilmFloatDataPtr}}
+\index{CR\_getFilmFloatDataPtr@{CR\_getFilmFloatDataPtr}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmFloatDataPtr()}{CR\_getFilmFloatDataPtr()}}
+{\footnotesize\ttfamily float$\ast$ C\+R\+\_\+get\+Film\+Float\+Data\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a pointer to the internal float framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gadb2de3bd8d8e791b70e868c6dd941d4c}\label{group__settings_gadb2de3bd8d8e791b70e868c6dd941d4c}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmHeight@{CR\_getFilmHeight}}
+\index{CR\_getFilmHeight@{CR\_getFilmHeight}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmHeight()}{CR\_getFilmHeight()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Film\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the height of the internal framebuffer. 
+
+\begin{DoxyReturn}{Returns}
+The height in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gabee84878b6cdd7cef77a12f96e1558d8}\label{group__settings_gabee84878b6cdd7cef77a12f96e1558d8}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmRGBByteSize@{CR\_getFilmRGBByteSize}}
+\index{CR\_getFilmRGBByteSize@{CR\_getFilmRGBByteSize}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmRGBByteSize()}{CR\_getFilmRGBByteSize()}}
+{\footnotesize\ttfamily uint64\+\_\+t C\+R\+\_\+get\+Film\+R\+G\+B\+Byte\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of bytes for the R\+GB buffer. 
+
+\begin{DoxyReturn}{Returns}
+The number of bytes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga7e35a131afd542a9896d2af3c49dbfc0}\label{group__settings_ga7e35a131afd542a9896d2af3c49dbfc0}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmRGBDataPtr@{CR\_getFilmRGBDataPtr}}
+\index{CR\_getFilmRGBDataPtr@{CR\_getFilmRGBDataPtr}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmRGBDataPtr()}{CR\_getFilmRGBDataPtr()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ C\+R\+\_\+get\+Film\+R\+G\+B\+Data\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a pointer to the internal R\+GB framebuffer. This should be called when rendering has finished, e.\+g. to write to a file. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga68b8fe06db4a26752ca802c6cf02b809}\label{group__settings_ga68b8fe06db4a26752ca802c6cf02b809}} 
+\index{General Settings API@{General Settings API}!CR\_getFilmWidth@{CR\_getFilmWidth}}
+\index{CR\_getFilmWidth@{CR\_getFilmWidth}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getFilmWidth()}{CR\_getFilmWidth()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Film\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the width of the internal framebuffer. 
+
+\begin{DoxyReturn}{Returns}
+The width in pixels. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga5477d2dcdb235681384b0bc718e90628}\label{group__settings_ga5477d2dcdb235681384b0bc718e90628}} 
+\index{General Settings API@{General Settings API}!CR\_getGamma@{CR\_getGamma}}
+\index{CR\_getGamma@{CR\_getGamma}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getGamma()}{CR\_getGamma()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} C\+R\+\_\+get\+Gamma (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the gamma correction value. 
+
+\begin{DoxyReturn}{Returns}
+The gamma correction value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga34cc951841f01b317bce965785226b65}\label{group__settings_ga34cc951841f01b317bce965785226b65}} 
+\index{General Settings API@{General Settings API}!CR\_getIntegrator@{CR\_getIntegrator}}
+\index{CR\_getIntegrator@{CR\_getIntegrator}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getIntegrator()}{CR\_getIntegrator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}} C\+R\+\_\+get\+Integrator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the integrator type used. 
+
+\begin{DoxyReturn}{Returns}
+The integrator type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga69e61b0e79dcb4303b05c51c00ef499b}\label{group__settings_ga69e61b0e79dcb4303b05c51c00ef499b}} 
+\index{General Settings API@{General Settings API}!CR\_getNumThreads@{CR\_getNumThreads}}
+\index{CR\_getNumThreads@{CR\_getNumThreads}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getNumThreads()}{CR\_getNumThreads()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Num\+Threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of threads. 
+
+\begin{DoxyReturn}{Returns}
+The number of threads. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gaf6d798017bc620a021c77e02034a7c6f}\label{group__settings_gaf6d798017bc620a021c77e02034a7c6f}} 
+\index{General Settings API@{General Settings API}!CR\_getOutputName@{CR\_getOutputName}}
+\index{CR\_getOutputName@{CR\_getOutputName}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getOutputName()}{CR\_getOutputName()}}
+{\footnotesize\ttfamily const char$\ast$ C\+R\+\_\+get\+Output\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the output name. 
+
+\begin{DoxyReturn}{Returns}
+The output name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gaf917cd720d2de5763c71ae1b6b67f607}\label{group__settings_gaf917cd720d2de5763c71ae1b6b67f607}} 
+\index{General Settings API@{General Settings API}!CR\_getRayDepth@{CR\_getRayDepth}}
+\index{CR\_getRayDepth@{CR\_getRayDepth}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getRayDepth()}{CR\_getRayDepth()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Ray\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the maximum depth of the rays for the path tracer. 
+
+\begin{DoxyReturn}{Returns}
+The maximum depth of rays. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gadc63706b08947ee9030bf8705edd3552}\label{group__settings_gadc63706b08947ee9030bf8705edd3552}} 
+\index{General Settings API@{General Settings API}!CR\_getRussianRoulette@{CR\_getRussianRoulette}}
+\index{CR\_getRussianRoulette@{CR\_getRussianRoulette}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getRussianRoulette()}{CR\_getRussianRoulette()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+get\+Russian\+Roulette (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the russian roulette status. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if russian roulette is enabled, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga9a13d5fc8019d2158f84dbfa4e9394bc}\label{group__settings_ga9a13d5fc8019d2158f84dbfa4e9394bc}} 
+\index{General Settings API@{General Settings API}!CR\_getSamplesPerPixel@{CR\_getSamplesPerPixel}}
+\index{CR\_getSamplesPerPixel@{CR\_getSamplesPerPixel}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_getSamplesPerPixel()}{CR\_getSamplesPerPixel()}}
+{\footnotesize\ttfamily int32\+\_\+t C\+R\+\_\+get\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of ray samples per pixel. 
+
+\begin{DoxyReturn}{Returns}
+The number of ray samples per pixel. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gaeca97415fb43ff95736c1344b348da70}\label{group__settings_gaeca97415fb43ff95736c1344b348da70}} 
+\index{General Settings API@{General Settings API}!CR\_isFastRNGEnabled@{CR\_isFastRNGEnabled}}
+\index{CR\_isFastRNGEnabled@{CR\_isFastRNGEnabled}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_isFastRNGEnabled()}{CR\_isFastRNGEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+is\+Fast\+R\+N\+G\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if Fast R\+NG is enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if Fast R\+NG is enabled/false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_ga0e84507872056bb89f4fc8e163d59f12}\label{group__settings_ga0e84507872056bb89f4fc8e163d59f12}} 
+\index{General Settings API@{General Settings API}!CR\_isInteractiveRendeEnabled@{CR\_isInteractiveRendeEnabled}}
+\index{CR\_isInteractiveRendeEnabled@{CR\_isInteractiveRendeEnabled}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_isInteractiveRendeEnabled()}{CR\_isInteractiveRendeEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+is\+Interactive\+Rende\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if interactive rendering is enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if interactive rendering is enabled/false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gac2324b97399c14d0f5ced0bc7f8a0a7d}\label{group__settings_gac2324b97399c14d0f5ced0bc7f8a0a7d}} 
+\index{General Settings API@{General Settings API}!CR\_isRGBBufferEnabled@{CR\_isRGBBufferEnabled}}
+\index{CR\_isRGBBufferEnabled@{CR\_isRGBBufferEnabled}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_isRGBBufferEnabled()}{CR\_isRGBBufferEnabled()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+is\+R\+G\+B\+Buffer\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if R\+GB buffer is enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if R\+GB buffer is enabled/false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__settings_gad11b2e9b5851759a4e34179cb7f55c37}\label{group__settings_gad11b2e9b5851759a4e34179cb7f55c37}} 
+\index{General Settings API@{General Settings API}!CR\_setAccelerationStructure@{CR\_setAccelerationStructure}}
+\index{CR\_setAccelerationStructure@{CR\_setAccelerationStructure}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setAccelerationStructure()}{CR\_setAccelerationStructure()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Acceleration\+Structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_gad99ba17ad9310c76e529921a042c91d0}{C\+R\+A\+Y\+\_\+\+A\+C\+C\+E\+L\+E\+R\+A\+T\+I\+O\+N\+\_\+\+S\+T\+R\+U\+C\+T\+U\+RE}}}]{acceleration\+\_\+structure\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Sets the acceleration structure. Simple scenes can use a simple array structure. For anything else, a B\+VH is the optimal option. Any subsequent calls to this function, overrides A\+ND D\+E\+L\+E\+T\+ES any previously allocated acceleration structure and internal data, e.\+g. primitives. This function should be called before adding any primitives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em acceleration\+\_\+structure\+\_\+type} & The acceleration structure (Default\+: B\+VH). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga670005d369909234b2e5ea4f2fb7af30}\label{group__settings_ga670005d369909234b2e5ea4f2fb7af30}} 
+\index{General Settings API@{General Settings API}!CR\_setAORange@{CR\_setAORange}}
+\index{CR\_setAORange@{CR\_setAORange}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setAORange()}{CR\_setAORange()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+A\+O\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{range }\end{DoxyParamCaption})}
+
+
+
+Sets the AO range of the rays. A value of 0 denotes infinite range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & The AO range (Default\+: 0). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gaacbfebbca3a175c783e63d733a4777c9}\label{group__settings_gaacbfebbca3a175c783e63d733a4777c9}} 
+\index{General Settings API@{General Settings API}!CR\_setAOSamplesPerPixel@{CR\_setAOSamplesPerPixel}}
+\index{CR\_setAOSamplesPerPixel@{CR\_setAOSamplesPerPixel}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setAOSamplesPerPixel()}{CR\_setAOSamplesPerPixel()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+A\+O\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{spp }\end{DoxyParamCaption})}
+
+
+
+Sets the number of AO rays to spawn for each sample per pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spp} & The AO rays per spp (Default\+: 1). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga20ef3b1c09e4424b0e7eb0c454233253}\label{group__settings_ga20ef3b1c09e4424b0e7eb0c454233253}} 
+\index{General Settings API@{General Settings API}!CR\_setBlockSize@{CR\_setBlockSize}}
+\index{CR\_setBlockSize@{CR\_setBlockSize}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setBlockSize()}{CR\_setBlockSize()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Block\+Size (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{block\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Sets the number of pixels per 2D tile to use for multithreaded rendering. A value of 16 or 32 is a typical use case. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+\_\+size} & The number of tiles (Default\+: 16, Minimum\+: 16). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga170fbbb3c14ba75fb087a6bc4ca91da0}\label{group__settings_ga170fbbb3c14ba75fb087a6bc4ca91da0}} 
+\index{General Settings API@{General Settings API}!CR\_setExposure@{CR\_setExposure}}
+\index{CR\_setExposure@{CR\_setExposure}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setExposure()}{CR\_setExposure()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Exposure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{exposure }\end{DoxyParamCaption})}
+
+
+
+Sets the exposure value to be used during the tonemapping operation. Internally, the traditional John Hable\textquotesingle{}s Uncharted 2 tonemapping operator is used. This is used only when an R\+GB buffer is enabled. Using an exposure value of 0.\+0 degrades to no tonemapping. This process is then followed by gamma correction (see \mbox{\hyperlink{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}{C\+R\+\_\+set\+Gamma}}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exposure} & The exposure value (Default\+: 2.\+0). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga6d76363dc639deb0f6d8a316d58b23d1}\label{group__settings_ga6d76363dc639deb0f6d8a316d58b23d1}} 
+\index{General Settings API@{General Settings API}!CR\_setFilmDimensions@{CR\_setFilmDimensions}}
+\index{CR\_setFilmDimensions@{CR\_setFilmDimensions}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setFilmDimensions()}{CR\_setFilmDimensions()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Film\+Dimensions (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{width,  }\item[{int32\+\_\+t}]{height }\end{DoxyParamCaption})}
+
+
+
+Sets the image dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width in pixels (Minimum\+: 32). \\
+\hline
+{\em height} & The height in pixels (Minimum\+: 32). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}\label{group__settings_gab2b4d517a977f7e6bf5c9cd92cd39117}} 
+\index{General Settings API@{General Settings API}!CR\_setGamma@{CR\_setGamma}}
+\index{CR\_setGamma@{CR\_setGamma}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setGamma()}{CR\_setGamma()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Gamma (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{gamma }\end{DoxyParamCaption})}
+
+
+
+Sets the gamma correction value. This is used only when an R\+GB buffer is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gamma} & The samples per pixel (Default\+: 2.\+2). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga61091e36fd9171a66786b16d17dc6fb4}\label{group__settings_ga61091e36fd9171a66786b16d17dc6fb4}} 
+\index{General Settings API@{General Settings API}!CR\_setIntegrator@{CR\_setIntegrator}}
+\index{CR\_setIntegrator@{CR\_setIntegrator}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setIntegrator()}{CR\_setIntegrator()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Integrator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_gac2bf4c86c36fdc97917721a24fc3adfe}{C\+R\+A\+Y\+\_\+\+I\+N\+T\+E\+G\+R\+A\+T\+OR}}}]{integrator\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Adds an integrator. Currently, Ambient Occlusion and unidirectional Path Tracing are available. A scene can be rendered multiple times with different integrators, by simply issuing calls to this function and \mbox{\hyperlink{group__resource_ga38a3e7c4517e340b6738327c730ec8ea}{C\+R\+\_\+start}}, i.\+e. no reloading of the scene data is required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em integrator\+\_\+type} & The integrator to use (Default\+: Path Tracing). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga3328876cc8e901c883639c040108a185}\label{group__settings_ga3328876cc8e901c883639c040108a185}} 
+\index{General Settings API@{General Settings API}!CR\_setInteractiveRender@{CR\_setInteractiveRender}}
+\index{CR\_setInteractiveRender@{CR\_setInteractiveRender}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setInteractiveRender()}{CR\_setInteractiveRender()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+set\+Interactive\+Render (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables/disables interactive rendering. This is useful only for integrations with a G\+UI. Enabling interactive rendering maintains all current settings with the following differences\+: 
+
+
+\begin{DoxyItemize}
+\item Rendering is using 1spp and the seed is restarted in every iteration. Therefore this mode is for preview purposes only.
+\item All system cores are utilized (minus the main thread).
+\item The R\+NG generator used is a classic Xorshift R\+NG instead of mt19937. Note that interactive rendering cannot be enabled when rendering in the main thread is also enabled (see \mbox{\hyperlink{group__settings_ga9518ba313bd84729c2414863e54b5d6f}{C\+R\+\_\+set\+Num\+Threads}}). 
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable interactive rendering (Default\+: false). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if interactive mode is enabled, false otherwise. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{group__settings_ga9518ba313bd84729c2414863e54b5d6f}\label{group__settings_ga9518ba313bd84729c2414863e54b5d6f}} 
+\index{General Settings API@{General Settings API}!CR\_setNumThreads@{CR\_setNumThreads}}
+\index{CR\_setNumThreads@{CR\_setNumThreads}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setNumThreads()}{CR\_setNumThreads()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Num\+Threads (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{num\+\_\+threads }\end{DoxyParamCaption})}
+
+
+
+Sets the number of threads to use for rendering. Ideally, this should be the number of cores in the system. The actual number of threads spawn is num\+\_\+threads -\/ 1 unless the use\+\_\+main\+\_\+thread flag is set to false. A value of 0 issues a serial operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+threads} & The number of threads to spawn (Default\+: 1). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga1da2648f72e031b1847466182d40a7e8}\label{group__settings_ga1da2648f72e031b1847466182d40a7e8}} 
+\index{General Settings API@{General Settings API}!CR\_setOutputName@{CR\_setOutputName}}
+\index{CR\_setOutputName@{CR\_setOutputName}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setOutputName()}{CR\_setOutputName()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Output\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+Sets an output name for writing. This is just a utility function, e.\+g. for scene loaders, as the engine does not perform any file operations. The name does not contain any extension. It is the responsibility of the caller to retrieve the final framebuffer and write to whichever file format is desired (or do anything with it). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The output name (Default\+: result). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}\label{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}} 
+\index{General Settings API@{General Settings API}!CR\_setRayDepth@{CR\_setRayDepth}}
+\index{CR\_setRayDepth@{CR\_setRayDepth}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setRayDepth()}{CR\_setRayDepth()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Ray\+Depth (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{depth }\end{DoxyParamCaption})}
+
+
+
+Sets the maximum depth of the rays for the path tracer. 1 is direct lighting, 2 is 1 indirect bounce, etc. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & The maximum depth of rays (Default\+: 10). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga86fdf97fa0548a0b2a41b6adb45f39f8}\label{group__settings_ga86fdf97fa0548a0b2a41b6adb45f39f8}} 
+\index{General Settings API@{General Settings API}!CR\_setRussianRoulette@{CR\_setRussianRoulette}}
+\index{CR\_setRussianRoulette@{CR\_setRussianRoulette}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setRussianRoulette()}{CR\_setRussianRoulette()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Russian\+Roulette (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enables/disables russian roulette for path tracing. This function is also capped by the \mbox{\hyperlink{group__settings_gaa7b3f631023c0ca34fdd9d3616fe0d67}{C\+R\+\_\+set\+Ray\+Depth}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable russian roulette (Default\+: true). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gaefb25f52505bdf55f780f68a0da18ebd}\label{group__settings_gaefb25f52505bdf55f780f68a0da18ebd}} 
+\index{General Settings API@{General Settings API}!CR\_setSamplesPerPixel@{CR\_setSamplesPerPixel}}
+\index{CR\_setSamplesPerPixel@{CR\_setSamplesPerPixel}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_setSamplesPerPixel()}{CR\_setSamplesPerPixel()}}
+{\footnotesize\ttfamily void C\+R\+\_\+set\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{spp }\end{DoxyParamCaption})}
+
+
+
+Sets the number of ray samples per pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spp} & The samples per pixel (Default\+: 1). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gaf75447dc5ba8a2c019ee266553570816}\label{group__settings_gaf75447dc5ba8a2c019ee266553570816}} 
+\index{General Settings API@{General Settings API}!CR\_useFastRNG@{CR\_useFastRNG}}
+\index{CR\_useFastRNG@{CR\_useFastRNG}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_useFastRNG()}{CR\_useFastRNG()}}
+{\footnotesize\ttfamily void C\+R\+\_\+use\+Fast\+R\+NG (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enforces the use of Xorshift R\+NG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & A flag to enable/disable fast R\+NG (Default\+: false). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_ga77c844ccdf749c46339d79d5613dec3a}\label{group__settings_ga77c844ccdf749c46339d79d5613dec3a}} 
+\index{General Settings API@{General Settings API}!CR\_useMainThread@{CR\_useMainThread}}
+\index{CR\_useMainThread@{CR\_useMainThread}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_useMainThread()}{CR\_useMainThread()}}
+{\footnotesize\ttfamily void C\+R\+\_\+use\+Main\+Thread (\begin{DoxyParamCaption}\item[{bool}]{use\+\_\+main\+\_\+thread }\end{DoxyParamCaption})}
+
+
+
+Enables/disables the use of the main thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\+\_\+main\+\_\+thread} & A flag to enforce the use of the main thread. This should be disabled for G\+UI integration (Default\+: true). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__settings_gad65bb7658f007b4538b3fd4ddb2dba4e}\label{group__settings_gad65bb7658f007b4538b3fd4ddb2dba4e}} 
+\index{General Settings API@{General Settings API}!CR\_usesMainThread@{CR\_usesMainThread}}
+\index{CR\_usesMainThread@{CR\_usesMainThread}!General Settings API@{General Settings API}}
+\doxysubsubsection{\texorpdfstring{CR\_usesMainThread()}{CR\_usesMainThread()}}
+{\footnotesize\ttfamily bool C\+R\+\_\+uses\+Main\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check if main thread rendering is enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if the main thread is used during rendering, false otherwise. 
+\end{DoxyReturn}

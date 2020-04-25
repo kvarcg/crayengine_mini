@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<world>
+    <settings num_threads="auto" block_size="32" log_level="info" output_name="textures"/>
+    <integrator type="path_tracing" spp="10" pt_depth="10" pt_russian_roulette="true"/>
+    <film dimensions="1920 1080" rgb_gamma="2.2" rgb_exposure="4.0"/>
+
+	<camera type="perspective" aperture="90.0" near="0.1" far="100" position="0.0, 0.0, 1.0" target="0.0, 0.0, -1.0" up="0.0, 1.0, 0.0"/>
+    <transform translation="0.0, 0.0, 0.0">
+
+        <omnilight position="0.0 0.0 4.0" flux="500 500 500"/>
+
+        <directory path="../generic"/>
+        <texture name="checkertex_boxc" type="file" file="checker4.png" wrap="clamp" filter="box" map="uv"/>
+        <texture name="checkertex_trc" type="file" file="checker4.png" wrap="clamp" filter="triangle" map="uv"/>
+        <texture name="checkertex_boxr" type="file" file="checker4.png" wrap="repeat" filter="box" map="uv"/>
+        <texture name="checkertex_trr" type="file" file="checker4.png" wrap="repeat" filter="triangle" map="uv"/>
+        <dielectric name="white1" diffuse_reflection="1 1 1" diffuse_reflection_texture="checkertex_boxc"/>
+        <dielectric name="white2" diffuse_reflection="1 1 1" diffuse_reflection_texture="checkertex_trc"/>
+        <dielectric name="white3" diffuse_reflection="1 1 1" diffuse_reflection_texture="checkertex_boxr"/>
+        <dielectric name="white4" diffuse_reflection="1 1 1" diffuse_reflection_texture="checkertex_trr"/>
+        <transform translation="-1.05, 1.05, -2">
+            <rectangle type="xy" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white1"/>
+        </transform>
+        <transform translation="1.05, 1.05, -2">
+            <rectangle type="xy" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white2"/>
+        </transform>
+        <transform translation="-1.05, -1.05, -2">
+            <rectangle type="xy" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white3"/>
+        </transform>
+        <transform translation="1.05, -1.05, -2">
+            <rectangle type="xy" min="-1.0 -1.0" max="1.0 1.0" flip_normals="false" material="white4"/>
+        </transform>
+    </transform>
+
+</world>

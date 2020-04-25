@@ -1,0 +1,194 @@
+\hypertarget{group__textures}{}\doxysection{Image A\+PI}
+\label{group__textures}\index{Image API@{Image API}}
+
+
+Functions for the generation of images, samplers and textures (an image with a sampler).  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gae19251eb53b7fcc1acea98e8f8c6c70b}{C\+R\+\_\+add\+Image}} (const uint8\+\_\+t $\ast$ptr, int32\+\_\+t width, int32\+\_\+t height, int32\+\_\+t channels, int32\+\_\+t size\+\_\+type, bool is\+\_\+srgb)
+\begin{DoxyCompactList}\small\item\em Creates an image. The data is internally allocated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gac6aac4b1d7a79b296c047b63d0efcef0}{C\+R\+\_\+add\+Image\+Checkerboard}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} tex1\+\_\+rgb, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} tex2\+\_\+rgb, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} frequency)
+\begin{DoxyCompactList}\small\item\em Creates a checkerboard texture using two different colors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gaf42de4f697dc5badf5f4a03ffd3eecb0}{C\+R\+\_\+add\+Texture\+Sampler}} (\mbox{\hyperlink{group__enums_ga9dd41d663d79d6b65ca6464e1ed7dcf2}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}} mapping\+\_\+mode, \mbox{\hyperlink{group__enums_gaadde5874628fa2ecf8234e675c4a7bca}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}} wrap\+\_\+mode, \mbox{\hyperlink{group__enums_ga91363bf13e8b0afb2280b03404766288}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}} filtering\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Creates a sampler. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__textures_gac20673dd9816a252c55d4acac18bb5f0}{C\+R\+\_\+add\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} image\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} sampler\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a sampler to be used for rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gab92ed502ff14933dba8d8b2ec105fd84}{C\+R\+\_\+add\+Material\+Diffuse\+Reflection\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s diffuse reflection color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_ga0b7540b328031f445c64372f5cfff97b}{C\+R\+\_\+add\+Material\+Diffuse\+Transmission\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s diffuse transmission color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gab19f7dab9dd5e8ca1cdf2e8856e3b29f}{C\+R\+\_\+add\+Material\+Specular\+Reflection\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s specular reflection color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__textures_gada5133e5087b96864eba1a9fecef7f95}{C\+R\+\_\+add\+Material\+Specular\+Transmission\+Texture}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} material\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} texture\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates a texture with a material\textquotesingle{}s specular transmission color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for the generation of images, samplers and textures (an image with a sampler). 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__textures_gae19251eb53b7fcc1acea98e8f8c6c70b}\label{group__textures_gae19251eb53b7fcc1acea98e8f8c6c70b}} 
+\index{Image API@{Image API}!CR\_addImage@{CR\_addImage}}
+\index{CR\_addImage@{CR\_addImage}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addImage()}{CR\_addImage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Image (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{ptr,  }\item[{int32\+\_\+t}]{width,  }\item[{int32\+\_\+t}]{height,  }\item[{int32\+\_\+t}]{channels,  }\item[{int32\+\_\+t}]{size\+\_\+type,  }\item[{bool}]{is\+\_\+srgb }\end{DoxyParamCaption})}
+
+
+
+Creates an image. The data is internally allocated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & The pointer to the data \\
+\hline
+{\em width} & The width of the image \\
+\hline
+{\em height} & The height of the image \\
+\hline
+{\em channels} & The number of channels in the image \\
+\hline
+{\em size\+\_\+type} & The size of the data type, e.\+g. 1 for R\+GB, 4 for floats \\
+\hline
+{\em is\+\_\+srgb} & If the data should be converted to linear space during storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the image to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__textures_gac6aac4b1d7a79b296c047b63d0efcef0}\label{group__textures_gac6aac4b1d7a79b296c047b63d0efcef0}} 
+\index{Image API@{Image API}!CR\_addImageCheckerboard@{CR\_addImageCheckerboard}}
+\index{CR\_addImageCheckerboard@{CR\_addImageCheckerboard}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addImageCheckerboard()}{CR\_addImageCheckerboard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Image\+Checkerboard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{tex1\+\_\+rgb,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{tex2\+\_\+rgb,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Creates a checkerboard texture using two different colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex1\+\_\+rgb} & The color of the texture for the odd texels \\
+\hline
+{\em tex2\+\_\+rgb} & The color of the texture for the even texels \\
+\hline
+{\em frequency} & The repetition frequency per the uv range \mbox{[}0-\/1\mbox{]}, e.\+g, a frequency of 1 shows 1 tile, a frequency of 2 shows 4. (Minimum value\+: 1.\+0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the image to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__textures_gab92ed502ff14933dba8d8b2ec105fd84}\label{group__textures_gab92ed502ff14933dba8d8b2ec105fd84}} 
+\index{Image API@{Image API}!CR\_addMaterialDiffuseReflectionTexture@{CR\_addMaterialDiffuseReflectionTexture}}
+\index{CR\_addMaterialDiffuseReflectionTexture@{CR\_addMaterialDiffuseReflectionTexture}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuseReflectionTexture()}{CR\_addMaterialDiffuseReflectionTexture()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Material\+Diffuse\+Reflection\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{texture\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates a texture with a material\textquotesingle{}s diffuse reflection color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+\_\+id} & The handle of the diffuse material. \\
+\hline
+{\em texture\+\_\+id} & The handle of the texture. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__textures_ga0b7540b328031f445c64372f5cfff97b}\label{group__textures_ga0b7540b328031f445c64372f5cfff97b}} 
+\index{Image API@{Image API}!CR\_addMaterialDiffuseTransmissionTexture@{CR\_addMaterialDiffuseTransmissionTexture}}
+\index{CR\_addMaterialDiffuseTransmissionTexture@{CR\_addMaterialDiffuseTransmissionTexture}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialDiffuseTransmissionTexture()}{CR\_addMaterialDiffuseTransmissionTexture()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Material\+Diffuse\+Transmission\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{texture\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates a texture with a material\textquotesingle{}s diffuse transmission color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+\_\+id} & The handle of the diffuse material. \\
+\hline
+{\em texture\+\_\+id} & The handle of the texture. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__textures_gab19f7dab9dd5e8ca1cdf2e8856e3b29f}\label{group__textures_gab19f7dab9dd5e8ca1cdf2e8856e3b29f}} 
+\index{Image API@{Image API}!CR\_addMaterialSpecularReflectionTexture@{CR\_addMaterialSpecularReflectionTexture}}
+\index{CR\_addMaterialSpecularReflectionTexture@{CR\_addMaterialSpecularReflectionTexture}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialSpecularReflectionTexture()}{CR\_addMaterialSpecularReflectionTexture()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Material\+Specular\+Reflection\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{texture\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates a texture with a material\textquotesingle{}s specular reflection color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+\_\+id} & The handle of the specular material. \\
+\hline
+{\em texture\+\_\+id} & The handle of the texture. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__textures_gada5133e5087b96864eba1a9fecef7f95}\label{group__textures_gada5133e5087b96864eba1a9fecef7f95}} 
+\index{Image API@{Image API}!CR\_addMaterialSpecularTransmissionTexture@{CR\_addMaterialSpecularTransmissionTexture}}
+\index{CR\_addMaterialSpecularTransmissionTexture@{CR\_addMaterialSpecularTransmissionTexture}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addMaterialSpecularTransmissionTexture()}{CR\_addMaterialSpecularTransmissionTexture()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Material\+Specular\+Transmission\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{material\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{texture\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates a texture with a material\textquotesingle{}s specular transmission color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em material\+\_\+id} & The handle of the specular material. \\
+\hline
+{\em texture\+\_\+id} & The handle of the texture. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__textures_gac20673dd9816a252c55d4acac18bb5f0}\label{group__textures_gac20673dd9816a252c55d4acac18bb5f0}} 
+\index{Image API@{Image API}!CR\_addTexture@{CR\_addTexture}}
+\index{CR\_addTexture@{CR\_addTexture}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addTexture()}{CR\_addTexture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{image\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{sampler\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates a texture with a sampler to be used for rendering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+\_\+id} & The handle of the image. \\
+\hline
+{\em sampler\+\_\+id} & The handle of the sampler. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the texture to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__textures_gaf42de4f697dc5badf5f4a03ffd3eecb0}\label{group__textures_gaf42de4f697dc5badf5f4a03ffd3eecb0}} 
+\index{Image API@{Image API}!CR\_addTextureSampler@{CR\_addTextureSampler}}
+\index{CR\_addTextureSampler@{CR\_addTextureSampler}!Image API@{Image API}}
+\doxysubsubsection{\texorpdfstring{CR\_addTextureSampler()}{CR\_addTextureSampler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Texture\+Sampler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__enums_ga9dd41d663d79d6b65ca6464e1ed7dcf2}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+M\+A\+P\+P\+I\+NG}}}]{mapping\+\_\+mode,  }\item[{\mbox{\hyperlink{group__enums_gaadde5874628fa2ecf8234e675c4a7bca}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+W\+R\+A\+P\+P\+I\+NG}}}]{wrap\+\_\+mode,  }\item[{\mbox{\hyperlink{group__enums_ga91363bf13e8b0afb2280b03404766288}{C\+R\+A\+Y\+\_\+\+T\+E\+X\+T\+U\+R\+E\+\_\+\+F\+I\+L\+T\+E\+R\+I\+NG}}}]{filtering\+\_\+mode }\end{DoxyParamCaption})}
+
+
+
+Creates a sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mapping\+\_\+mode} & The mapping mode used. (Default\+: UV). \\
+\hline
+{\em wrap\+\_\+mode} & The wrap mode used. (Default\+: C\+L\+A\+MP). \\
+\hline
+{\em filtering\+\_\+mode} & The filtering mode used. (Default\+: T\+R\+I\+A\+N\+G\+L\+E/bilinear). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the sampler to other functions. 
+\end{DoxyReturn}

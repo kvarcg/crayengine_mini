@@ -1,0 +1,101 @@
+\hypertarget{group__camera}{}\doxysection{Cameras A\+PI}
+\label{group__camera}\index{Cameras API@{Cameras API}}
+
+
+Functions for the generation of cameras.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__camera_ga0f56f2d511d29ab752b2e96408b42427}{C\+R\+\_\+add\+Camera\+Thin\+Lens}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} lens\+\_\+radius, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} focal\+\_\+distance)
+\begin{DoxyCompactList}\small\item\em Creates a thinlens camera. This is essentially the perspective camera with a predefined lens radius and focal distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__camera_ga1da8cd87b6390bdbb09dd08962299d71}{C\+R\+\_\+add\+Camera\+Perspective}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} aperture, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Creates a perspective pinhole camera. This is essentially the thinlens camera without a predefined lens radius and focal distance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__camera_ga69bd20bdfedc72521917f7341dfd11b0}{C\+R\+\_\+add\+Camera\+Orthographic}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} up, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} height, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} near, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} far)
+\begin{DoxyCompactList}\small\item\em Creates an orthographic camera. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for the generation of cameras. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__camera_ga69bd20bdfedc72521917f7341dfd11b0}\label{group__camera_ga69bd20bdfedc72521917f7341dfd11b0}} 
+\index{Cameras API@{Cameras API}!CR\_addCameraOrthographic@{CR\_addCameraOrthographic}}
+\index{CR\_addCameraOrthographic@{CR\_addCameraOrthographic}!Cameras API@{Cameras API}}
+\doxysubsubsection{\texorpdfstring{CR\_addCameraOrthographic()}{CR\_addCameraOrthographic()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Camera\+Orthographic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{up,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{height,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{near,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{far }\end{DoxyParamCaption})}
+
+
+
+Creates an orthographic camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the camera in world units. \\
+\hline
+{\em target} & The target of the camera in world units. \\
+\hline
+{\em up} & The up vector of the camera. This does not need to be accurate as it gets recalculated internally. \\
+\hline
+{\em height} & The height of the viewport, in world units. The width is automatically adjusted based on the aspect ration \\
+\hline
+{\em near} & The near field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+{\em far} & The far field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__camera_ga1da8cd87b6390bdbb09dd08962299d71}\label{group__camera_ga1da8cd87b6390bdbb09dd08962299d71}} 
+\index{Cameras API@{Cameras API}!CR\_addCameraPerspective@{CR\_addCameraPerspective}}
+\index{CR\_addCameraPerspective@{CR\_addCameraPerspective}!Cameras API@{Cameras API}}
+\doxysubsubsection{\texorpdfstring{CR\_addCameraPerspective()}{CR\_addCameraPerspective()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Camera\+Perspective (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{up,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{aperture,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{near,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{far }\end{DoxyParamCaption})}
+
+
+
+Creates a perspective pinhole camera. This is essentially the thinlens camera without a predefined lens radius and focal distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the camera in world units. \\
+\hline
+{\em target} & The target of the camera in world units. \\
+\hline
+{\em up} & The up vector of the camera. This does not need to be accurate as it gets recalculated internally. \\
+\hline
+{\em aperture} & The vertical F\+OV of the camera. \\
+\hline
+{\em near} & The near field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+{\em far} & The far field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__camera_ga0f56f2d511d29ab752b2e96408b42427}\label{group__camera_ga0f56f2d511d29ab752b2e96408b42427}} 
+\index{Cameras API@{Cameras API}!CR\_addCameraThinLens@{CR\_addCameraThinLens}}
+\index{CR\_addCameraThinLens@{CR\_addCameraThinLens}!Cameras API@{Cameras API}}
+\doxysubsubsection{\texorpdfstring{CR\_addCameraThinLens()}{CR\_addCameraThinLens()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Camera\+Thin\+Lens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{up,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{aperture,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{far,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{lens\+\_\+radius,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{focal\+\_\+distance }\end{DoxyParamCaption})}
+
+
+
+Creates a thinlens camera. This is essentially the perspective camera with a predefined lens radius and focal distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the camera in world units. \\
+\hline
+{\em target} & The target of the camera in world units. \\
+\hline
+{\em up} & The up vector of the camera. This does not need to be accurate as it gets recalculated internally. \\
+\hline
+{\em aperture} & The vertical F\+OV of the camera. \\
+\hline
+{\em far} & The far field of the camera. This is not necessary, but is provided as an extra parameter. \\
+\hline
+{\em lens\+\_\+radius} & The spherical radius of the thinlens aperture. Setting this to 0 delegates the thinlens camera to the perspective pinhole camera. \\
+\hline
+{\em focal\+\_\+distance} & The focal distance of the camera, the plane where the objects are in focus. Setting this to 0 delegates the thinlens camera to the perspective pinhole camera. \\
+\hline
+\end{DoxyParams}

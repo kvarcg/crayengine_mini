@@ -1,0 +1,145 @@
+\hypertarget{group__light}{}\doxysection{Light A\+PI}
+\label{group__light}\index{Light API@{Light API}}
+
+
+Functions for the generation of emitters.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__light_ga441e92793a7cb747725eba0803f5762b}{C\+R\+\_\+add\+Light\+Point\+Spot}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} falloff\+Angle, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} max\+Angle, \mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}} exponent)
+\begin{DoxyCompactList}\small\item\em Creates a point spotlight. This is a dirac light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga719b93acd78b08da6c35e6ceebf8f118}{C\+R\+\_\+add\+Light\+Point\+Omni}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity)
+\begin{DoxyCompactList}\small\item\em Creates a point omnidirectional light. This is a dirac light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga5f8c6c1eaf234dd9db8c5686712862dc}{C\+R\+\_\+add\+Light\+Directional}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} direction, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity\+\_\+rgb)
+\begin{DoxyCompactList}\small\item\em Creates a parallel light using a direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_ga094a4b471803f17e7216095ff7c1794b}{C\+R\+\_\+add\+Light\+Directional\+From\+To}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} position, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} target, \mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} intensity\+\_\+rgb)
+\begin{DoxyCompactList}\small\item\em Creates a parallel light using a point and a target to generate a direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} \mbox{\hyperlink{group__light_ga23a5e3f5b51d9ac8d8f40507d787229b}{C\+R\+\_\+add\+Light\+Area\+Diffuse\+Emitter}} (\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}} flux, bool doublesided)
+\begin{DoxyCompactList}\small\item\em Creates an area light, modeled as a diffuse emitter. This needs to be associated with a primitive. Currently, triangles are not yet supported. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__light_gae99cff51e6c7bfea416288f745defc95}{C\+R\+\_\+add\+Area\+Light\+To\+Primitive}} (\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} primitive\+\_\+id, \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} light\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Associates an area light with a primitive. Note that the same light source can be shared by multiple primitives. In that case, the light\textquotesingle{}s flux is scaled by each primitive\textquotesingle{}s area. This way, it is easy to associate a large polygon group with one light source. Since this method is approximate, accurate rendering requires 1 light per primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for the generation of emitters. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__light_gae99cff51e6c7bfea416288f745defc95}\label{group__light_gae99cff51e6c7bfea416288f745defc95}} 
+\index{Light API@{Light API}!CR\_addAreaLightToPrimitive@{CR\_addAreaLightToPrimitive}}
+\index{CR\_addAreaLightToPrimitive@{CR\_addAreaLightToPrimitive}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addAreaLightToPrimitive()}{CR\_addAreaLightToPrimitive()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Area\+Light\+To\+Primitive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{primitive\+\_\+id,  }\item[{\mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}}}]{light\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Associates an area light with a primitive. Note that the same light source can be shared by multiple primitives. In that case, the light\textquotesingle{}s flux is scaled by each primitive\textquotesingle{}s area. This way, it is easy to associate a large polygon group with one light source. Since this method is approximate, accurate rendering requires 1 light per primitive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em primitive\+\_\+id} & The handle of the primitive \\
+\hline
+{\em light\+\_\+id} & The handle of the light \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__light_ga23a5e3f5b51d9ac8d8f40507d787229b}\label{group__light_ga23a5e3f5b51d9ac8d8f40507d787229b}} 
+\index{Light API@{Light API}!CR\_addLightAreaDiffuseEmitter@{CR\_addLightAreaDiffuseEmitter}}
+\index{CR\_addLightAreaDiffuseEmitter@{CR\_addLightAreaDiffuseEmitter}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addLightAreaDiffuseEmitter()}{CR\_addLightAreaDiffuseEmitter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__base_ga0e58e813d60515411e6f10fe8c5b1865}{C\+R\+A\+Y\+\_\+\+H\+A\+N\+D\+LE}} C\+R\+\_\+add\+Light\+Area\+Diffuse\+Emitter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{flux,  }\item[{bool}]{doublesided }\end{DoxyParamCaption})}
+
+
+
+Creates an area light, modeled as a diffuse emitter. This needs to be associated with a primitive. Currently, triangles are not yet supported. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flux} & The flux of the light, in Watts. \\
+\hline
+{\em doublesided} & A flag that dictates if the light emits light from both its sides. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A generic handle used to pass the light to other functions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__light_ga5f8c6c1eaf234dd9db8c5686712862dc}\label{group__light_ga5f8c6c1eaf234dd9db8c5686712862dc}} 
+\index{Light API@{Light API}!CR\_addLightDirectional@{CR\_addLightDirectional}}
+\index{CR\_addLightDirectional@{CR\_addLightDirectional}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addLightDirectional()}{CR\_addLightDirectional()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Light\+Directional (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{direction,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{intensity\+\_\+rgb }\end{DoxyParamCaption})}
+
+
+
+Creates a parallel light using a direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction of the light. \\
+\hline
+{\em intensity\+\_\+rgb} & The intensity of the light. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__light_ga094a4b471803f17e7216095ff7c1794b}\label{group__light_ga094a4b471803f17e7216095ff7c1794b}} 
+\index{Light API@{Light API}!CR\_addLightDirectionalFromTo@{CR\_addLightDirectionalFromTo}}
+\index{CR\_addLightDirectionalFromTo@{CR\_addLightDirectionalFromTo}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addLightDirectionalFromTo()}{CR\_addLightDirectionalFromTo()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Light\+Directional\+From\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{intensity\+\_\+rgb }\end{DoxyParamCaption})}
+
+
+
+Creates a parallel light using a point and a target to generate a direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the light in world units. \\
+\hline
+{\em target} & The target of the light in world units. \\
+\hline
+{\em intensity\+\_\+rgb} & The intensity of the light. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__light_ga719b93acd78b08da6c35e6ceebf8f118}\label{group__light_ga719b93acd78b08da6c35e6ceebf8f118}} 
+\index{Light API@{Light API}!CR\_addLightPointOmni@{CR\_addLightPointOmni}}
+\index{CR\_addLightPointOmni@{CR\_addLightPointOmni}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addLightPointOmni()}{CR\_addLightPointOmni()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Light\+Point\+Omni (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{intensity }\end{DoxyParamCaption})}
+
+
+
+Creates a point omnidirectional light. This is a dirac light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the light in world units. \\
+\hline
+{\em intensity} & The intensity of the light. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__light_ga441e92793a7cb747725eba0803f5762b}\label{group__light_ga441e92793a7cb747725eba0803f5762b}} 
+\index{Light API@{Light API}!CR\_addLightPointSpot@{CR\_addLightPointSpot}}
+\index{CR\_addLightPointSpot@{CR\_addLightPointSpot}!Light API@{Light API}}
+\doxysubsubsection{\texorpdfstring{CR\_addLightPointSpot()}{CR\_addLightPointSpot()}}
+{\footnotesize\ttfamily void C\+R\+\_\+add\+Light\+Point\+Spot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{position,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{target,  }\item[{\mbox{\hyperlink{structcr__vec3}{cr\+\_\+vec3}}}]{intensity,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{falloff\+Angle,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{max\+Angle,  }\item[{\mbox{\hyperlink{group__base_gac679409efbbe825bcee7bc9437d10194}{cr\+\_\+float}}}]{exponent }\end{DoxyParamCaption})}
+
+
+
+Creates a point spotlight. This is a dirac light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the light in world units. \\
+\hline
+{\em target} & The target of the light in world units. \\
+\hline
+{\em intensity} & The intensity of the light. \\
+\hline
+{\em falloff\+Angle} & The falloff angle, that dictates where the light energy starts to drop. \\
+\hline
+{\em max\+Angle} & The cutoff angle, that dictates where the light energy drops to 0. \\
+\hline
+{\em exponent} & The spotlight exponent, that provides an exponential fall off as the light travels away from its perfect direction. \\
+\hline
+\end{DoxyParams}
