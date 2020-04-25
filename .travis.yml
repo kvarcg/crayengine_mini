@@ -1,0 +1,282 @@
+language: cpp
+
+matrix:
+  include:
+    - name: "Windows MSVC 2017 32-bit"
+      os: windows
+      script:
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Visual Studio 15 2017" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Windows MSVC 2017"
+      os: windows
+      script:
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Visual Studio 15 2017 Win64" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux GCC 5 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-5
+      env:
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+      script:
+        - gcc -v
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux GCC 6 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+      script:
+        - gcc -v
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux GCC 7 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+      env:
+        - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+      script:
+        - gcc -v
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux GCC 8 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-8
+      env:
+        - MATRIX_EVAL="CC=gcc-8 && CXX=g++-8"
+      script:
+        - gcc -v
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux Clang 4.0 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-xenial-4.0
+          packages:
+            - clang-4.0
+      env:
+        - MATRIX_EVAL="CC=clang-4.0 && CXX=clang++-4.0"
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux Clang 5.0 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-xenial-5.0
+          packages:
+            - clang-5.0
+      env:
+        - MATRIX_EVAL="CC=clang-5.0 && CXX=clang++-5.0"
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux Clang 6.0 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-xenial-6.0
+          packages:
+            - clang-6.0
+      env:
+        - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux Clang 7 (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-xenial-7
+          packages:
+            - clang-7
+      env:
+        - MATRIX_EVAL="CC=clang-7 && CXX=clang++-7"
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "Linux Clang 8  (Xenial 16.04)"
+      os: linux
+      dist: xenial
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-xenial-8
+          packages:
+            - clang-8
+      env:
+        - MATRIX_EVAL="CC=clang-8 && CXX=clang++-8"
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -G "Unix Makefiles" -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 8 Clang 3.9"
+      os: osx
+      osx_image: xcode8
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 9 Clang 4"
+      os: osx
+      osx_image: xcode9
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 9.3 Clang 5"
+      os: osx
+      osx_image: xcode9.3
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 10 Clang 6"
+      os: osx
+      osx_image: xcode10
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 10.2 Clang 7"
+      os: osx
+      osx_image: xcode10.2
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+    - name: "OSX Xcode 11 Clang 8"
+      os: osx
+      osx_image: xcode11
+      script:
+        - clang --version
+        - cmake --version
+        - mkdir build
+        - cd build
+        - cmake -DTESTS_ENABLE=ON ..
+        - cmake --build . --config Release
+        - ctest -C Release -VV
+
+before_install:
+    - eval "${MATRIX_EVAL}"
